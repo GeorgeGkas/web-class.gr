@@ -1,0 +1,2 @@
+1. Create a proper 404 page for react/Notfound.js
+2. Create a proper index page for react/pages/Index.js
