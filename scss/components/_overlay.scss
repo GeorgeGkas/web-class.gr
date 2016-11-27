@@ -1,0 +1,15 @@
+/* The overlay is used in devices with max-width
+ * under 768px. This feature hides the container
+ * so the user can see the sidebar more easily.
+ */
+
+#overlay {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 68px);
+    z-index: 95;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.5;
+}

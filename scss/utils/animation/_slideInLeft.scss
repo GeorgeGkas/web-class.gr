@@ -1,0 +1,14 @@
+@keyframes slideInLeft {
+    from {
+        transform: translate(-110%, 0);
+        visibility: visible;
+    }
+    to {
+        transform: translate(0, 0);
+
+    }
+}
+
+.slideInLeft {
+    animation: slideInLeft 1s forwards;
+}
