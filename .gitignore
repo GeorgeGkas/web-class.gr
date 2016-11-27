@@ -1,1 +1,5 @@
 node_modules
+
+# The bellow file is the compiled version of index.pug
+# Use pug:mockups if you like to see the compiled version
+etc/views/index.html
