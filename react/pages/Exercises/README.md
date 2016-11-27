@@ -1,0 +1,1 @@
+We use different components for each exercise just to keep things simpler.
