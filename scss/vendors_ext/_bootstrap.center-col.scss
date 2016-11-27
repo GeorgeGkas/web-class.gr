@@ -1,0 +1,8 @@
+/* Center a bootstrap column
+ * to the center of the parent element.
+ */
+.center-col {
+    float: none;
+    margin: 0 auto 15px;
+    position: relative !important;
+}

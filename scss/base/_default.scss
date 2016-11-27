@@ -1,0 +1,14 @@
+/* Initialize and reset some of the
+ * defaults styles for a tag and button.
+ */
+
+a,
+button {
+    &:hover,
+    &:active,
+    &:focus {
+        background: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+}
