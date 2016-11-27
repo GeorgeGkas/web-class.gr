@@ -1,0 +1,171 @@
+doctype html
+html
+    head
+        title Web-Class | Δωρεάν Μαθήματα Web Developing
+
+        //- Meta First
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        meta(charset='UTF-8')
+        block META
+
+        //- Load Fonts
+        -
+            fontList = ['Open+Sans', 'Roboto']
+
+        each font in fontList
+            link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=" + font)
+
+        //- OTHER STYLESHEETS
+        link(rel="stylesheet", type="text/css", href="../../../public/css/main.css")
+        link(rel="stylesheet", type="text/css", href="../../../public/css/pages/index.css")
+
+    body
+        header#app-bar
+            ul(class="navbar-left col-xs-12 col-sm-4 col-md-3 col-lg-3", id="left-region")
+                li#sidebar-reveal
+                    a(id="jumbotron",  onclick="doCollapse()" data-target="#nav-md-placeholder")
+                li
+                    h1#app-bar__website-title Web-Class.gr
+            ul(class="navbar-right hidden-xs col-sm-8 col-md-9 col-lg-9", id="right-region")
+                    h2(id="app-bar__lesson-title", class="text-center") Δημιουργώντας την πρωσοπική μου σελίδα
+
+        #container
+
+            //- THE NAVIGATION MENU
+            div(class="hidden-xs col-sm-4 col-md-3 col-lg-3", id="nav-md-placeholder")
+                nav#sidebar
+                    ul#main-menu
+                        li.ripple-btn
+                            a(href="")
+                                span(class="item-align-fix")
+                                    i(class="glyphicon glyphicon-home", style="margin-right: 10px;")
+                                    strong
+                                        span αρχικη
+                        -
+                            lessonTitles = [{ title: 'εισαγωγη στην html',  isExercise: false   },
+                                            { title: 'εισαγωγη στην css',   isExercise: false   },
+                                            { title: 'εργασια 1',           isExercise: true    },
+                                            { title: 'περισσοτερη html',    isExercise: false   },
+                                            { title: 'περισσοτερη css',     isExercise: false   },
+                                            { title: 'εργασια 2',           isExercise: true    },
+                                            { title: 'προχωρημενη html',    isExercise: false   },
+                                            { title: 'προχωρημενη css',     isExercise: false   },
+                                            { title: 'εργασια 3',           isExercise: true    },
+                                            { title: 'δικτυακα θεματα',     isExercise: false   },
+                                            { title: 'εισαγωγη στην php',   isExercise: false   },
+                                            { title: 'περισσότερη php',     isExercise: false   },
+                                            { title: 'εργασια 4',           isExercise: true    },
+                                            { title: 'php gd',              isExercise: false   },
+                                            { title: 'εισαγωγη στην mysql', isExercise: false   },
+                                            { title: 'περισσοτερη msyql',   isExercise: false   },
+                                            { title: 'εργασια 5',           isExercise: true    },
+                                            { title: 'προχωρημένη php',     isExercise: false   },
+                                            { title: 'θεματα δομης',        isExercise: false   },
+                                            { title: 'εισαγωγη στην javascript', isExercise: false  },
+                                            { title: 'JQuery & Ajax',       isExercise: false   },
+                                            { title: 'εργασια 6',           isExercise: true    },
+                                            { title: 'Javascript Events',   isExercise: false   },
+                                            { title: 'mobile',              isExercise: false   },
+                                            { title: 'DOM/BOM σε Javascript',   isExercise: false   },
+                                            { title: 'θεματα ασφαλειας',    isExercise: false   },
+                                            { title: 'OOP Javascript',      isExercise: false   },
+                                            { title: 'Subversion',          isExercise: false   },
+                                            { title: 'Workshop',            isExercise: false   },
+                                            { title: 'τελικες εργασιες',    isExercise: false   }]
+
+                        each title in lessonTitles
+                            li.ripple-btn
+                                a(href="")
+                                    if title.isExercise
+                                        span(class="item-align-fix")
+                                            i(class="glyphicon glyphicon-pencil nav-ico untaken-lesson")
+                                            span #{title.title}
+                                    else
+                                         span(class="item-align-fix")
+                                            i(class="glyphicon glyphicon-ok-sign nav-ico untaken-lesson")
+                                            span #{title.title}
+
+
+                
+            //- THE MAIN SECTION AREA 
+            main(class="col-xs-12 col-sm-8 col-md-9 col-lg-9", id="main-content-placeholder")
+
+                //- OVERLAY TO HIDE THE MAIN AREA WHEN THE NAV IS SHOWN
+                #overlay.hidden
+
+                div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center-col")
+
+                    //- SECTION ONLY FOR LESSONS
+                    section#video-section
+                        div(class="embed-responsive embed-responsive-16by9")
+                            iframe(class="embed-responsive-item " src="//www.youtube.com/embed/lyyoqlneOIQ" allowfullscreen)
+                    section#lesson-details     
+                        header
+                            h1#lesson-title LESSON TITLE
+                        #lesson-description 
+                            p A SMALL DESCRIPTION SENTENCE
+                            p Ύλη που καλύπτεται:
+                            ul
+                                li SOMETHING
+                                li SOMETHING
+                                li SOMETHING
+                                li SOMETHING
+                                li SOMETHING
+                            #other-informations
+                                p#presentaion-sheets
+                                    span(class="glyphicon glyphicon-blackboard")
+                                    a(href="#") Διαφάνειες μαθήματος 
+                                p#suggested-reading
+                                    span(class="glyphicon glyphicon-book")
+                                    span Προτεινόμενη ανάγνωση: 
+                                    a(href="#") A BOOK OR LINK
+                                p#deepening
+                                    span(class="glyphicon glyphicon-search")
+                                    span Εμβάθυνση: 
+                                    a(href="")  ANOTHER BOOK OR LINK
+
+                    //- SECTION ONLY FOR EXERCISES 
+                    section#exercise-description
+                        #introduction 
+                            p 
+                                span(class="glyphicon glyphicon-star")
+                                |   DESCRIPTION
+                        #curriculum 
+                            p 
+                                span(class="glyphicon glyphicon-education")
+                                |   Ύλη: Διαλέξεις ?
+                        #problem 
+                            h3 Εκφώνηση
+                            p  
+                                |   BLAH BLAH
+
+                            p  WHAT DO WE EXCEPT THE SOLUTION TO BE
+
+                            //- WE CAN ADD AS MANY PARAGRAPHS AS WE WANT
+
+                        #tip
+                            p 
+                                span(class="glyphicon glyphicon-exclamation-sign")
+                                |   Tip  IF EXSIST
+                        #solution
+                            p 
+                                span(class="glyphicon glyphicon-thumbs-up")
+                                |   Ολοκληρώνοντας την εργασία σας μην δυστάσετε να ρίξετε μια ματιά στις παρακάτω πρότυπες λύσεις:
+                            ul 
+                                li SOLUTION 1
+                                li SOLUTION 2
+                                li SOLUTION 3
+
+
+                    //- PAGINATION TO NAVIGATE THROUGH PAGES
+                    section#navigation-buttons   
+                        div(class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-left", id="previous-lesson")
+                            a(class="btn btn-default", title="Πηγαίνετε στο μάθημα 21") 
+                                span(class="glyphicon glyphicon-menu-left",  style="padding-right: 5px;") 
+                                |   LINK
+                        div(class="col-xs-4  col-md-4 col-lg-4 text-center",  id="lesson-counter")
+                            p(title="Παρακολουθείται το ?") Εργασία ? OR ?/24
+                        div(class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-right",  id="next-lesson")
+                            a(class="btn btn-default", title="Πηγαίνετε στο μάθημα 23") 
+                                |   LINK
+                                span(class="glyphicon glyphicon-menu-right", style="padding-left: 10px;")
