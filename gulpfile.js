@@ -23,6 +23,11 @@ const gulp = require('gulp');
 const pug = require('gulp-pug');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
+const browserify = require('browserify');
+const babelify = require('babelify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+const watchify = require('watchify');
 
 // copy bootstrap required fonts to public
 gulp.task('fonts', function CopyFonts() {
@@ -61,3 +66,41 @@ gulp.task('pug:views', function BuildHtml() {
     .pipe(pug())
     .pipe(gulp.dest('etc/views'));
 });
+
+function ReactBundler(watch = false) {
+  let buildNumber = 0;
+
+  const bundle = browserify({
+    extensions: ['.jsx', '.js'],
+    debug: true,
+    cache: {},
+    packageCache: {},
+    fullPaths: true,
+    entries: './react/index.js'
+  });
+
+  function build() {
+    bundle
+      .transform(babelify.configure({
+        presets: ['es2015', 'react', 'stage-0'],
+        plugins: ['react-html-attrs', 'transform-class-properties'],
+        ignore: /(bower_components)|(node_modules)/
+      }))
+      .bundle()
+      .on("error", (err) => console.log("Error : " + err.message))
+      .pipe(source('bundle.js'))
+      .pipe(gulp.dest('./public/react'));
+  }
+
+  if (watch) {
+    bundle.plugin(watchify);
+    bundle.on('update', build);
+    bundle.on('log', (msg) => console.log('Build ' + buildNumber++ + ' :' + msg));
+  }
+
+  build();
+}
+
+gulp.task('react:watch', () => ReactBundler(true));
+
+gulp.task('react', () => ReactBundler());
