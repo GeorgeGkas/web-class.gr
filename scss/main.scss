@@ -8,3 +8,9 @@
 @import "vendors/_bootstrap.scss";
 @import "base/_typography.scss";
 @import "base/_default.scss";
+
+/* Custom animations that reveal and hide the
+ * sidebar menu from the screen
+ */
+@import "utils/animation/_slideInLeft.scss";
+@import "utils/animation/_slideOffLeft.scss";
