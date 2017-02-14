@@ -35,13 +35,12 @@ export default class Lesson extends React.Component {
   renderSuggestedReading(lesson) {
     this.suggested_reading = [];
     if (lesson.suggestedReading && lesson.suggestedReading.length > 0) {
-      this.suggested_reading.push(<span key={Math.random()} class="glyphicon glyphicon-book"></span>);
-      this.suggested_reading.push(<span key={Math.random()}>Προτεινόμενη ανάγνωση: </span>);
+      this.suggested_reading.push(<span class="glyphicon glyphicon-book"></span>);
+      this.suggested_reading.push(<span>Προτεινόμενη ανάγνωση: </span>);
       for (let link of lesson.suggestedReading) {
-        let item = <a key={Math.random()} href={link.url}>{ ' <' + link.title + '> '}</a>;
+        let item = <a href={link.url}>{ ' <' + link.title + '> '}</a>;
         this.suggested_reading.push(item);
       }
-
     }
 
   }
@@ -49,10 +48,10 @@ export default class Lesson extends React.Component {
   renderDeepening(lesson) {
     this.deepening = [];
     if (lesson.deepening && lesson.deepening.length > 0) {
-      this.deepening.push(<span key={Math.random()} class="glyphicon glyphicon-search"></span>);
-      this.deepening.push(<span key={Math.random()}>Εμβάθυνση: </span>);
+      this.deepening.push(<span class="glyphicon glyphicon-search"></span>);
+      this.deepening.push(<span>Εμβάθυνση: </span>);
       for (let link of lesson.deepening) {
-        let item = <a key={Math.random()} href={link.url}>{ ' <' + link.title + '> '}</a>;
+        let item = <a href={link.url}>{ ' <' + link.title + '> '}</a>;
         this.deepening.push(item);
       }
     }
@@ -63,16 +62,10 @@ export default class Lesson extends React.Component {
     let syllabus = [];
     this.syllabus_section = null;
     if (lesson.syllabus && lesson.syllabus.length > 0) {
-      lesson.syllabus.map( (lesson, index) => {
-        // console.log('lesson,index',lesson, index);
-        let item = <li key={index}>{lesson}</li>;
+      for (let lesson of lesson.syllabus) {
+        let item = <li>{lesson}</li>;
         syllabus.push(item);
-      });
-      // for (let lesson of lesson.syllabus) {
-      //   console.log('lesson,index',lesson, index);
-      //   let item = <li>{lesson}</li>;
-      //   syllabus.push(item);
-      // }
+      }
       this.syllabus_section = <div> <p>Ύλη που καλύπτεται:</p> 
                               <ul> {syllabus} </ul> </div>;
     }

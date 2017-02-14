@@ -1,0 +1,18 @@
+#go-to-first-lesson {
+  text-align: center;
+  padding-top: 50px;
+
+  #first-lesson-button {
+    margin: 0 auto;
+    border: none;
+    background: #2C955D;
+    padding: 25px 30px;
+    color: #fff;
+    font-size: 19px;
+    transition: .2s;
+
+    &:hover {
+    	background: #2C957B;
+    }
+  }
+}
