@@ -12,7 +12,13 @@ export default class Sidebar extends React.Component {
     this.state = {
       SidebarIsCollapse: sidebarStore.getCurrentState()
     }
-    this.NavMdPlaceholderClass = 'hidden-xs col-sm-4 col-md-3 col-lg-3';
+    let windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+    if (windowWidth <= 768) {
+      this.NavMdPlaceholderClass = 'hidden-xs col-sm-4 col-md-3 col-lg-3';
+    } else {
+      this.NavMdPlaceholderClass = 'col-sm-4 col-md-3 col-lg-3';
+    }
   }
 
   componentWillMount() {
