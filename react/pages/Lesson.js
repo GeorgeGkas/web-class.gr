@@ -20,6 +20,7 @@ export default class Lesson extends React.Component {
     this.renderSuggestedReading(LessonStore.getLesson());
     this.renderDeepening(LessonStore.getLesson());
     this.renderSyllabus(LessonStore.getLesson());
+    this.renderSlides(LessonStore.getLesson());
   }
 
   componentWillMount() {
@@ -64,19 +65,21 @@ export default class Lesson extends React.Component {
     this.syllabus_section = null;
     if (lesson.syllabus && lesson.syllabus.length > 0) {
       lesson.syllabus.map( (lesson, index) => {
-        // console.log('lesson,index',lesson, index);
         let item = <li key={index}>{lesson}</li>;
         syllabus.push(item);
       });
-      // for (let lesson of lesson.syllabus) {
-      //   console.log('lesson,index',lesson, index);
-      //   let item = <li>{lesson}</li>;
-      //   syllabus.push(item);
-      // }
       this.syllabus_section = <div> <p>Ύλη που καλύπτεται:</p> 
                               <ul> {syllabus} </ul> </div>;
     }
 
+  }
+
+  renderSlides(lesson) {
+    this.slides_url = null;
+    if (lesson.presentationSheetURL && lesson.presentationSheetURL.length > 0) {
+      this.slides_url = <div> <span class="glyphicon glyphicon-blackboard"></span> 
+                        <a href={lesson.presentationSheetURL}>Διαφάνειες μαθήματος </a> </div>;
+    }
   }
 
 
@@ -97,8 +100,7 @@ export default class Lesson extends React.Component {
           {this.syllabus_section}
           <div id="other-informations">
             <p id="presentaion-sheets">
-              <span class="glyphicon glyphicon-blackboard"></span>
-              <a href={this.state.LessonDetails.presentationSheetURL}>Διαφάνειες μαθήματος </a>
+              {this.slides_url}
             </p>
             <p id="suggested-reading">
               {this.suggested_reading}
