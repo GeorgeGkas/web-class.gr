@@ -4,14 +4,6 @@ import sidebarStore from './SidebarStore';
 import { Link as ReactLink } from 'react-router';
 
 export default class SidebarLink extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      SidebarIsCollapse: sidebarStore.getCurrentState()
-    }
-    this.NavMdPlaceholderClass = 'hidden-xs col-sm-4 col-md-3 col-lg-3';
-  }
-
   ChangeSidebarState() {
     let windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     if (windowWidth <= 768) {
