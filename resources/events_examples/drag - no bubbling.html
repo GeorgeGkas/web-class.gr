@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>Events</title>
+		<style type="text/css">
+			span {
+				cursor: pointer;
+				border: 2px solid black;
+				padding: 3px;
+				display: block;
+				width: 200px;
+				text-align: center;
+				margin: 6px;
+			}
+		</style>
+		<script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+	</head>
+	<body>
+		<span class='draggable'>Drag me</span>
+		<span class='draggable'>Drag me</span>
+		<span class='draggable'>Drag me</span>
+		<span class='draggable'>Drag me</span>
+		<span class='draggable'>Drag me</span>
+	
+		<script type="text/javascript">
+			function mousedownHandler( e )  {
+				this.isMoving = true;
+				this.xoffset = e.pageX - $( this ).offset().left;
+				this.yoffset = e.pageY - $( this ).offset().top;
+				$( this ).css( {
+					position: 'absolute',
+					top: e.pageY - this.yoffset + 'px',
+					left: e.pageX - this.xoffset + 'px'
+				} );
+				return false;
+			}
+			
+			function mousemoveHandler( e ) {
+				if( this.isMoving ) {
+					$( this ).css( {
+						top: e.pageY - this.yoffset + 'px',
+						left: e.pageX - this.xoffset + 'px'
+					} );	
+				}
+			}
+			
+			function mouseupHandler() {
+				this.isMoving = false;
+			}
+				
+			$( '.draggable' ).mousedown( mousedownHandler );
+			$( '.draggable' ).mousemove( mousemoveHandler );
+			$( '.draggable' ).mouseup( mouseupHandler );
+		</script>
+	</body>
+</html>

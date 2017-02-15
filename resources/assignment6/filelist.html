@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>File Uploader</title>
+        <style type="text/css">
+            body {
+                font-family: "Trebuchet MS";
+                margin: 5px;
+            }
+            h1 {
+                margin: 0;
+                font-weight: normal;
+            }
+            h2 {
+                font-weight: normal;
+                color: #358;
+            }
+            div.menu {
+                float: right;
+                margin: 0;
+                padding: 0;
+            }
+            ul {
+                list-style: none;
+                padding: 5px;
+                margin: 0;
+            }
+            li a {
+                background-image: url( 'file.png' );
+                background-position: left;
+                background-repeat: no-repeat;
+                padding-left: 20px;
+            }
+            li pre a {
+                background-image: url( 'download.gif' );
+                background-position: left;
+                background-repeat: no-repeat;
+                padding-left: 20px;
+                margin: 5px;
+                display: block;
+                color: #45a;
+                text-decoration: none;
+            }
+            pre {
+                font-family: 'Trebuchet MS';
+                margin-left: 30px;
+                display: none;
+            }
+        </style>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+    </head>
+    <body>
+        <div class="menu"><strong>dionyziz</strong> | <a href="">logout</a></div>
+        <h1>The Awesome Uploader</h1>
+        <h2>My uploaded files</h2>
+        <ul>
+            <li><a href="">severing.txt</a><pre>I turned as new resigned:
+A summer gleaned, my business was within,
+My charge the sober mind,
+My care the wintry bin.
+And found the boughs in stain,
+Past-promise-hued. O not
+Before, earnest as rich was yet so plain;
+A harvest was ungot.
+Beech drenching down my pathway goldenheart,
+Ash, pensive light-cheek rose,
+Both pluck the thought apart,
+And meant you, heart, to close?
+So fell the doomed farewells;
+So, so looked forth a thing:
+Regret, reproach, what else
+Must baffle, vex, beguile this severing
+<a href="">Download this file</a></pre></li>
+            <li><a href="">sun.jpg</a><pre>
+<img src="sun.jpg" alt='Sun' />
+<a href="">Download this file</a></pre></li>
+            <li><a href="">playstation.gif</a></li>
+            <li><a href="">notebook.png</a></li>
+        </ul>
+        <h2>Upload a new file</h2>
+        <form action="upload.php" method="post">
+            <input type="file" />
+            <input type="submit" value="Upload" />
+        </form>
+        <script type="text/javascript">
+            $( $( 'li a' ) ).click( function () { 
+                $( this ).parent().find( 'pre' ).toggle();
+                return false;
+            } );
+        </script>
+    </body>
+</html>

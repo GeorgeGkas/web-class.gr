@@ -1,0 +1,1 @@
+If only dead people know hexadecimal, how many people know hexadecimal?

@@ -1,0 +1,86 @@
+html {
+    background: #484848 url( 'images/grass.png' ) repeat-x top left;
+}
+
+body {
+    margin: 75px 10px 10px 10px;
+    padding: 0 10%;
+    color: white;
+    background: url( 'images/bats.gif' ) no-repeat top left;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+h1 {
+    font: 20pt Arial, "Trebuchet MS", sans-serif;
+    text-align: left;
+    margin: 0;
+    padding: 13px 50px;
+    background-image: url( 'images/shovel.png' );
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+h1 span {
+    color: #afa;
+}
+
+h2, h3 {
+    font-weight: bold;
+    font-variant: small-caps;
+    padding: 10px;
+}
+
+h2 {
+    font-size: 20pt;
+    margin: 0px 0;
+}
+
+h3 {
+    font-size: 16pt;
+}
+
+a {
+    color: white;
+}
+
+ul {
+    list-style: square url( 'images/cross.gif' );
+}
+
+#menu {
+    padding-left: 50px;
+}
+
+.darkbox {
+    background: url( 'images/background.png' );
+    padding: 10px 30px;
+    margin: 10px 0;
+    border-top: 1px solid #888;
+}
+
+img {
+    width: 200px;
+}
+
+.coffins h3 {
+    font-variant: normal;
+    font-weight: normal;
+}
+
+#subtitle {
+    margin: 0 0 0 55px;
+    padding: 0;
+    font-weight: bold;
+    font-variant: normal;
+    font-size: 100%;
+}
+
+p {
+    text-align: justify;
+}
+
+a:hover {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+}

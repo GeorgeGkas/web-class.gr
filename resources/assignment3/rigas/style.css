@@ -1,0 +1,122 @@
+/*html {
+	width: 1025px;
+	position: relative;
+	}*/
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Trebuchet MS";
+	min-width: 800px;
+	overflow: auto;
+	}
+h1 {
+	border: 0;
+	border-bottom: 1px #ccc solid;
+	border-top: 2px #e1e6f6 solid;
+	font-family: Georgia;
+	font-size: 20px;
+	font-weight: normal;
+	padding: 5px 5px;
+	margin: 0;
+	letter-spacing: 1px;
+	}
+.bigcapital {
+	font-size: 27px;
+	font-weight: bold;
+	}
+#navigation {
+	position: absolute;
+	top: 4px;
+	right: 0;
+	overflow: auto;
+	margin: 10px 5px;
+	padding: 0;
+	}
+#navigation li {
+	display: inline;
+	padding: 0 2px;
+	font-weight: bold;
+	font-size: 15px;
+	}
+#navigation li a {
+	color: #00428f;
+	text-decoration: underline;
+	font-weight: normal;
+	font-size: 15px;
+	}
+#content-list {
+	background-color: #eee;
+	border-left: 0;
+	border-top: 0;
+	border-right: 1px #ccc solid;
+	border-bottom: 1px #ccc solid;
+	float: left;
+	margin: 0 20px 10px 0;
+	padding: 10px 0 10px 5px;
+	min-height: 410px;
+	width: 346px;
+	font-size: 15px;
+	list-style-type: none;
+	}
+#content-list a, #content-list .sublist a {
+	text-decoration: none;
+	color: #00428f;
+	}
+#content-list li, #content-list .sublist li {
+	margin: 1px 0;
+	}
+.sublist {
+	list-style-type: none;
+	margin: 0 0 0 10px;
+	padding: 0;
+	}
+#selected {
+	color: #fff;
+	font-style: italic;
+	background-color: #ad2121;
+	border-top: 1px #790101 solid;
+	border-bottom: 1px #790101 solid;
+	padding: 3px 10px;
+	}
+#zengarden img {
+	height: 144px;
+	width: 200px;
+	}
+#zengarden {
+	float: right;
+	color: #333;
+	font-size: 13px;
+	background-color: #eee;
+	border: 1px #ccc solid;
+	margin: 28px 10px 0 20px;
+	padding: 5px;
+	width: 200px;
+	text-align: center;
+	}
+#article {
+	font-size: 15px;
+	}
+#article h2 {
+	font-size: 22px;
+	}
+.quote {
+	font-style: italic;
+	font-size: 16px;
+	margin-left: 410px;
+	display: block;
+	}
+#sign {
+	width: 40%;
+	margin: 10px 0 0 30%;
+	padding: 5px 0 0 0;
+	border-top: 1px #ccc solid;
+	clear: both;
+	color: #999;
+	text-align: center;
+	font-size: 15px;
+	}
+#sign a {
+	font-weight: bold;
+	color: #99c;
+	text-decoration: underline;
+	}

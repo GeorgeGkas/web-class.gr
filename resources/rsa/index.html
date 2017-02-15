@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="el" lang="el">
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8;" />
+        <title>Πώς φτιάχνουμε ένα RSA κλειδί</title>
+        <meta name="author" content="Dionysis 'dionyziz' Zindros" />
+        <style type="text/css">
+        body {
+            font: normal 11pt "Trebuchet MS";
+        }
+        h1 {
+            font-size: 14pt;
+        }
+        h2 {
+            font-size: 13pt;
+        }
+        div {
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+            background-color: #eee;
+            float: right;
+            border: 1px solid #999;
+        }
+        div img {
+            width: 200px;
+            cursor: pointer;
+        }
+        div span {
+            font-size: 90%;
+            display: block;
+            padding: 5px 0;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Πώς φτιάχνουμε ένα RSA κλειδί</h1>
+        <p>
+            Ένα RSA κλειδί είναι ο πιο ασφαλής τρόπος που είναι σε χρήση στη βιομηχανία σήμερα
+            και αφορά την ανταλλαγή κώδικα. Χρησιμοποιείται συχνά για την αποστολή και λήψη αρχείων
+            πηγαίου κώδικα, καθώς δεν απαιτεί την απομνημόνευση κωδικού πρόσβασης, και παρ' όλα αυτά
+            παραμένει μέχρι σήμερα απόλυτα ασφαλής.
+        </p>
+        <h2>Δημόσια/ιδιωτικά κλειδιά</h2>
+        <p>
+            Ένα κλειδί RSA είναι στην πραγματικότητα ένας τρόπος πιστοποίησης της ταυτότητάς μας
+            και ταυτόχρονα κρυπτογράφησης δεδομένων. Ένα RSA κλειδί αποτελείται από δύο μέρη:
+            το ιδιωτικό κλειδί και το δημόσιο κλειδί. Κάθε μέλος μίας ομάδας προγραμματισμού έχει
+            ένα ιδιωτικό και ένα δημόσιο κλειδί. Το δημόσιο κλειδί του το δημοσιεύει ελεύθερα στο
+            διαδίκτυο, ενώ το ιδιωτικό του το κρατά στον υπολογιστή του και το προστατεύει σαν να
+            ήταν κωδικός πρόσβασης. Αυτό σημαίνει ότι δεν το μοιράζεται με τα άλλα μέλη της ομάδας
+            του καθώς είναι προσωπικό.
+        </p>
+        <h2>Δημιουργία RSA κλειδιού σε Windows</h2>
+        <p>
+            Για να δημιουργήσεις ένα RSA κλειδί σε Windows, χρησιμοποίησε το εργαλείο puttygen που
+            μπορείς να κατεβάσεις από
+            <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">την σελίδα του PuTTY</a>.
+            Τρέξε το πρόγραμμα και επίλεξε την ρύθμιση SSH-2 RSA στα 1024 bits. Στη συνέχεια πάτα το κουμπί
+            "Generate" για να δημιουργηθεί το κλειδί σου. Ίσως χρειαστεί να μετακινήσεις το ποντίκι στην 
+            οθόνη για να παράγεις τυχαίο "θόρυβο" που θα χρησιμοποιηθεί ώστε το κλειδί σου να είναι πραγματικά
+            τυχαίο και ασφαλές. Στη συνέχεια με το κουμπί "Save private key" μπορείς
+            να αποθηκεύσεις το ιδιωτικό σου κλειδί. Δεν είναι απαραίτητο να χρησιμοποιήσεις passphrase.
+            Αποθήκευσε το ιδιωτικό σου κλειδί οπουδήποτε. Εγώ το έχω στα έγγραφά μου με το όνομα dionyziz.ppk
+            (το ppk είναι τα αρχικά από το PuTTY Private Key).
+        </p>
+        <p>
+            Το δημόσιο κλειδί σου είναι το κείμενο που βρίσκεται στην περιοχή "Public key for pasting into OpenSSH
+            authorized_keys file". <span style="color:red;font-weight:bold">Δεν είναι σωστό να χρησιμοποιηθεί η λειτουργία "Save public key"</span>, αλλά πρέπει να
+            γίνει αντιγραφή/επικόλληση από το συγκεκριμένο πλαίσιο κειμένου. Για παράδειγμα το δικό μου είναι το εξής:
+        </p>
+        <code><pre>
+            ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAqs3qk+CfuPNh2V3dE62pFWezsmcWuUdJg1ZDfDaOLcImj8aa9EHFAJu+Q2hrWjs0X
+                    jN0TP8aYS0AIhqlULfT3uTWQLfh0CdllssgS50oAxILEY7iDdyM7yk4wQMxqQl7Yugw81sUYNx/XwLq9zpV38GY9eR99e
+                    rQe5aBuXXAAhU= dionyziz@kamibu.com
+        </pre></code>
+        <p>
+            Καθώς πρόκειται για το δημόσιο κλειδί μου, δεν υπάρχει πρόβλημα να το δημοσιεύσω εδώ. Δημιούργησε ένα
+            αρχείο κειμένου και κάνε επικόλληση του δημόσιου κλειδιού σου μέσα. Στη συνέχεια αποθήκευσέ το στα
+            έγγραφά σου με το όνομα authorized_keys και χωρίς επέκταση (για παράδειγμα χωρίς .txt). Αυτό γίνεται
+            μέσω του Notepad χρησιμοποιώντας την επιλογή "Όλα τα αρχεία" ή μέσω του Notepad++ ή οποιουδήποτε άλλου
+            προγράμματος επεξεργασίας κώδικα.
+        </p>
+        <h2>Δημιουργία RSA κλειδιού σε Linux</h2>
+        <p>
+            Σε κονσόλα, χρησιμοποίησε την ακόλουθη εντολή:
+        </p>
+        <code>
+            ssh-keygen -t rsa
+        </code>
+        <p>
+            Πάτησε Enter σε όλες τις ερωτήσεις που θα σου κάνει το πρόγραμμα ώστε να χρησιμοποιηθούν οι προεπιλεγμένες
+            επιλογές. Αυτό σημαίνει ότι δεν θα ορίσεις κάποιο passphrase, και το ιδιωτικό σου κλειδί θα αποθηκευθεί στο
+            id_rsa, ενώ το δημόσιο κλειδί σου θα βρίσκεται στο id_rsa.pub, και τα δύο στον κρυφό φάκελο .ssh μέσα στο Home
+            φάκελό σου. Για παράδειγμα για εμένα αυτό είναι το /home/dionyziz/.ssh/id_rsa.pub. Αντίγραψε το αρχείο id_rsa.pub
+            στον προσωπικό σου φάκελο και ονόμασέ το authorized_keys. Μην διαγράψεις το υπάρχον id_rsa.pub.
+        </p>
+        <h2>Εγκατάσταση RSA κλειδιού στον server από Windows client</h2>
+        <p>
+            Μπορείς ήδη να συνδεθείς στον server μέσω SCP χρησιμοποιώντας το WinSCP.
+            Συνδέσου χρησιμοποιώντας τον λογαριασμό σου με την μέθοδο που γνωρίζεις 
+            και με τον υπάρχοντα κωδικό σου.
+            Μετά θα ανεβάσεις το δημόσιο κλειδί σου στον server έτσι ώστε να μπορεί να σε πιστοποιεί χωρίς την χρήση κωδικού
+            πρόσβασης πλέον. Δημιούργησε έναν φάκελο με το όνομα ".ssh" (χωρίς τα εισαγωγικά) μέσα στον προσωπικό σου φάκελο.
+            Αυτό γίνεται
+            με δεξί κλικ και χρήση της λειτουργίας Νέος &gt; Φάκελος στο WinSCP. Μέσα στον φάκελο .ssh, ανέβασε το αρχείο authorized_keys που έχεις δημιουργήσει στο προηγούμενο βήμα. 
+        </p>
+        <p>
+            Στη συνέχεια θα πρέπει να διορθώσεις τα δικαιώματα στον φάκελο .ssh και στο αρχείο authorized_keys. Πρώτα βεβαιώσου
+            ότι το αρχείο authorized_keys έχει δικαιώματα 400 δηλαδή μόνο +r στον owner, αλλά τίποτε άλλο. Στη συνέχεια βεβαιώσου
+            ότι ο φάκελος .ssh έχει δικαιώματα 500 δηλαδή μόνο +r και +x στον owner, αλλά τίποτε άλλο. Αυτό σημαίνει ότι το
+            "group" και το "others" θα πρέπει να έχουν απενεργοποιημένα τα r, w και x και στις δύο περιπτώσεις. Τα δικαιώματα
+            στο WinSCP ρυθμίζονται κάνοντας δεξί κλικ στο αρχείο και επιλέγοντας "Ιδιότητες".
+        </p>
+        <h2>Εγκατάσταση RSA κλειδιού στον server χρησιμοποιώντας Linux client</h2>
+        <p>
+            Θα πρέπει τώρα να ανεβάσεις το δημόσιο κλειδί σου στον server ώστε να μπορείς να πιστοποιηθείς
+            χρησιμοποιώντας το ιδιωτικό σου κλειδί χωρίς την χρήση κωδικού πρόσβασης. Αρχικά θα πρέπει να δημιουργήσεις
+            τον φάκελο .ssh μέσα στον προσωπικό σου φάκελο. Αυτό γίνεται εύκολα χρησιμοποιώντας την εντολή sftp.
+            Στο ακόλουθο παράδειγμα, υποθέτουμε ότι το username σου είναι "alan":
+        </p>
+        <code><pre>
+            alan@enigma:~$ sftp alan@web-seminar.softlab.ntua.gr
+            Connecting to web-seminar.softlab.ntua.gr...
+            alan@web-seminar.softlab.ntua.gr's password:
+            sftp&gt; mkdir .ssh
+        </pre></code>
+        <p>
+            Στη συνέχεια θα πρέπει να ανεβάσεις το αρχείο authorized_keys που δημιούργησες. Αυτό γίνεται ως συνήθως
+            με τον τρόπο που ανεβάζουμε αρχεία στο SCP:
+        </p>
+        <code><pre>
+            alan@enigma:~$ scp authorized_keys alan@web-seminar.softlab.ntua.gr:~/.ssh
+        </pre></code>
+        <p>
+            Τέλος θα πρέπει να ρυθμίσεις τα δικαιώματα των αρχείων στο server. Συγκεκριμένα θα πρέπει να δώσεις δικαιώματα
+            500 στον φάκελο .ssh και 400 στο αρχείο authorized_keys. Και πάλι αυτό γίνεται εύκολα χρησιμοποιώντας την εντολή
+            sftp.
+        </p>
+        <code><pre>
+            alan@enigma:~$ sftp alan@web-seminar.softlab.ntua.gr
+            Connecting to web-seminar.softlab.ntua.gr...
+            alan@web-seminar.softlab.ntua.gr's password:
+            sftp&gt; ls -la
+            drwx------    2 alan students     4096 Jan  4 01:08 .
+            drwxr-xr-x  234 root students    12288 Dec 25 03:13 ..
+            -rw-r--r--    1 alan students      220 May 12  2008 .bash_logout
+            -rw-r--r--    1 alan students     3116 May 12  2008 .bashrc
+            -rw-r--r--    1 alan students      675 May 12  2008 .profile
+            drwx------    2 alan students      096 Jan  4 01:29 .ssh
+            -rw-------    1 alan students      256 Dec 24 01:00 download.php
+            -rw-------    1 alan students      512 Dec 24 02:00 index.php
+            -rw-------    1 alan students     1024 Dec 24 03:00 upload.php
+            -rw-------    1 alan students     2048 Dec 24 04:00 style.css
+            sftp&gt; chmod 400 .ssh/authorized_keys
+            Changing mode on /home/students/alan/.ssh/authorized_keys
+            sftp&gt; chmod 500 .ssh
+            Changing mode on /home/students/alan/.ssh
+        </pre></code>
+        <h2>Σύνδεση χωρίς κωδικό</h2>
+        <p>Πλέον μπορείς να συνδεθείς χωρίς κωδικό πρόσβασης. Στο linux, απλώς χρησιμοποιείς την εντολή sftp η οποία
+        δεν θα σου ζητάει πλέον κωδικό πρόσβασης, αφού χρησιμοποιεί αυτόματα το αρχείο .ssh/id_rsa. Σε Windows,
+        στις ρυθμίσεις σύνδεσης του WinSCP επιλέγεις στο πεδίο "Private key file" την διαδρομή του ιδιωτικού κλειδιού
+        σου. Για να μην το κάνεις κάθε φορά, μπορείς να αποθηκεύσεις την σύνοδο.</p>
+        <h2>Περισσότερα</h2>
+        <ul>
+            <li><a href="http://en.wikipedia.org/wiki/Public-key_cryptography">Μέθοδος δημόσιου/ιδιωτικού κλειδιού</a></li>
+            <li><a href="http://winscp.net/eng/docs/public_key">Οδηγίες χρήσης RSA κλειδιών για το WinSCP</a></li>
+            <li><a href="http://winscp.net/eng/docs/ui_puttygen">Οδηγίες χρήσης του PuTTYgen</a></li>
+            <li><a href="http://en.wikipedia.org/wiki/RSA">Περισσότερα μαθηματικά πίσω από το RSA</a></li>
+        </ul>
+    </body>
+</html>

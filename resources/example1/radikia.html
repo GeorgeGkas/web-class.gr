@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>Γραφείο Τελετών «Τα ραδίκια ανάποδα»</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8;" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        <h1>Τα <span>Ραδίκια</span> Ανάποδα</h1>
+        <h2 id="subtitle">Γραφείο Τελετών</h2>
+        
+        <ul class="darkbox" id="menu">
+            <li><a href="#">Υπηρεσίες</a></li>
+            <li><a href="#">Φέρετρα</a></li>
+            <li><a href="#">Προσωπικό</a></li>
+            <li><a href="#">Ποιοι είμαστε</a></li>
+            <li><a href="#contact">Επικοινωνία</a></li>
+        </ul>
+        
+        <div class="darkbox">
+            <h2>Λιγα λογια</h2>
+            <p>Προτιμήστε μας για τις τελευταίες στιγμές της ύπαρξής σας  πάνω στη γη.  Προσφέρουμε άριστες υπηρεσίες για την <strong>στερνή</strong> σας ανάπαυση. Τα φέρετρά μας είναι ξεκούραστα, με <strong>πουπουλένια</strong> μαξιλαράκια και <strong>οικολογικό</strong> μαόνι.</p>
+        </div>
+        
+        
+        <div class="darkbox">
+            <h2>Σημαντικοι πελατες</h2>
+
+                <h3>Πολιτικοι</h3>
+                <ul>
+                    <li><a href="http://en.wikipedia.org/wiki/John_F._Kennedy">John F. Kennedy</a></li>
+                    <li><a href="http://en.wikipedia.org/wiki/Adolf_Hitler">Αδόλφος Χίτλερ</a></li>
+                    <li><a href="http://en.wikipedia.org/wiki/Joseph_Stalin">Joseph Stalin</a></li>
+                    <li><a href="http://en.wikipedia.org/wiki/Mao_Zedong">Mao Zedong</a></li>
+                </ul>
+                
+                <h3>Celebrities</h3>
+                <ul>
+                    <li><a href="http://en.wikipedia.org/wiki/Elvis_Presley">Elvis Presley</a></li>
+                    <li><a href="http://en.wikipedia.org/wiki/Kurt_Cobain">Kurt Cobain</a></li>
+                    <li><a href="http://en.wikipedia.org/wiki/Count_Dracula">Κόμης Δράκουλας</a></li>
+                    <li>Η μικρή Αννούλα</li>
+                    <li>...και πρόσφατα <a href="http://en.wikipedia.org/wiki/Michael_Jackson">Michael Jackson</a></li>
+                </ul>
+                
+                <p>Η λίστα μας μεγαλώνει καθημερινά. Κλείστε μία θέση σήμερα! <a href="#contact">Επικοινωνήστε</a></p>
+        </div>
+        
+        <div class="darkbox coffins">		
+            <h2>Φερετρα</h2>
+            
+            <p>Ικανοποιούμε κάθε ανάγκη σας. Από αιγυπτιακούς τάφους και μουμιοποίηση, μέχρι φέρετρα high-tech με πρόσβαση στο Internet «υπογείως».</p>
+            
+            <h3>High-tech ταφή</h3>
+            <p>
+                <img src="images/hightech.jpg" alt="High-Tech φέρετρο"/>
+            </p>
+            
+            <h3>Αιγυπιακή ταφή</h3>
+            <p>
+                <img src="images/egyptian.jpg" alt="Αιγυπτιακός τάφος"/>
+            </p>
+        </div>
+        
+        <form class="darkbox" action="contact.php" method="post" id="contact">
+            <p>Συμπληρώστε τα στοιχεία σας για εκδήλωση ενδιαφέροντος.</p>
+            <div>
+                <label for="name">Όνομα και επώνυμο:</label>
+                <input type="text" id="name" name="name"/>
+            </div>
+            <div>
+                <input type="radio" name="gender" id="gender-male" value="m" />
+                <label for="gender-male">Άντρας</label>
+            </div>
+            <div>
+                <input type="radio" name="gender" id="gender-female" value="f"/>
+                <label for="gender-female">Γυναίκα</label>
+            </div>
+            <div>
+                <textarea name="message" cols="60" rows="10"></textarea>
+            </div>
+            <div>
+                <input type="submit" value="Αποστολή" />
+            </div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<title>Events</title>
+		<style type="text/css">
+			span {
+				cursor: pointer;
+				border: 2px solid black;
+				padding: 3px;
+				display: block;
+				width: 200px;
+				text-align: center;
+				margin: 6px;
+			}
+		</style>
+		<script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+	</head>
+	<body>
+		<span onclick="wtf_is_this()">HTML Method</span>
+		<span id='trad'>Traditional Method</span>
+		<span id='w3c'>W3C Method</span>
+	
+		<script type="text/javascript">
+			function wtf_is_this() {
+				console.log( this );
+			}
+			
+			var a = document.getElementById( 'trad' );
+			a.onclick = wtf_is_this;
+			
+			var b = $( '#w3c' )[ 0 ];
+			b.addEventListener( 'click', wtf_is_this, false );
+		</script>
+	</body>
+</html>

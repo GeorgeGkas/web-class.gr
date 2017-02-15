@@ -1,0 +1,1 @@
+<?php    function Comment_Create( $userid, $photoid, $text ) {    }        function Comment_Delete( $commentid ) {    }?>

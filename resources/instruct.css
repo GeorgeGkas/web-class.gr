@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: verdana;
+    font-size: 9pt;
+    line-height: 130%;
+}
+h1 {
+    background-color: #ccc;
+    color: #444;
+    padding: 20px 10px;
+    margin-top: 0;
+    border-bottom: 1px solid #999;
+    border-top: 1px solid #999;
+}
+h2,h3,h4 {
+    color: #333;
+}
+div.contents {
+    padding: 5px 20px;
+    /*
+    margin: 5px 10px;
+    background-color: white;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    */
+}
+.romanlist {
+    list-style-type: lower-alpha;
+}
+ol {
+    margin: 5px 0px;
+}
+dl {
+    width: 600px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+dl dt {
+    margin-top: 2px;
+    background-color: #669;
+    border: 1px solid black;
+    border-bottom: 0px;
+    padding: 2px;
+}
+dl dd {
+    background-color: white;
+    border: 1px solid black;
+    padding: 2px;
+    margin: 0px;
+}
+#apache-options-img {
+    margin: 10px;
+    display: block;
+}
+blockquote {
+    font-family: courier;
+}
+div.author {
+    margin-left: 20px;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    padding: 5px;
+    background-color: #eee;
+}
+code {
+    display: block;
+    margin: 5px 0px;
+    padding: 2px 0px 2px 20px;
+    background-color: #eee;
+}
+em.package {
+    font-weight: bold;
+    font-style: normal;
+}
+em.option {
+    font-weight: normal;
+    font-style: italics;
+}
+div.navigation {
+    font-family: helvetica;
+    font-size: 9pt;
+}
+div.navigation h2 {
+    font-size: 10pt; 
+}
+div.navigation ol {
+    padding-left: 25px;
+}
+div.navigation a {
+    text-decoration: none;
+    font-weight: normal;
+    color: black;
+}
+div.navigation a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="el" lang="el"> 
+	<head>
+        <!--
+            Εεεεπ! Πώς και διαβάζεις αυτό τον κώδικα; Καλή ανάγνωση! :)
+        -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Εγκατάσταση Apache και PHP</title>
+        <link type="text/css" rel="stylesheet" href="../instruct.css" />
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-26430202-1']);
+          _gaq.push(['_setDomainName', '.ntua.gr']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+	</head>
+	<body>
+		<h1>Εγκατάσταση Apache και PHP</h1>
+        <div class="author">
+            <a href="http://twitter.com/#!/abresas">Αλέξης Μπρέζας</a>, για το <a href="http://web-seminar.softlab.ntua.gr/">Σεμινάριο: Ανάπτυξη Web Εφαρμογών 2010</a>
+        </div>
+		<div class="contents">
+			<p>Αυτός είναι ένας οδηγός γρήγορης εγκατάστασης <a href="http://httpd.apache.org/">Apache HTTP Server</a> και <a href="http://php.net/">PHP</a> σε Windows και Ubuntu Linux για αρχάριους. Έτσι, συνήθως δεν θα δίνεται επεξήγηση των επιλογών πέρα από το αναγκαίο, ούτε τρόποι επίλυσης προβλημάτων. Γι' αυτά ο αναγνώστης θα πρέπει να πλοηγηθεί σε άλλες σελίδες του Ιστού, όπως για παράδειγμα στους συνδέσμους στο τέλος.</p>
+            <div class="navigation">
+                <h2>Περιεχομενα</h2> 
+                <ol>
+                    <li><a href="#windows">Σε Windows</a>
+                        <ol>
+                            <li><a href="#windows-apache">Apache</a>
+                                <ol>
+                                    <li><a href="#windows-apache-download">Κατέβασε το αρχείο εγκατάστασης</a></li>
+                                    <li><a href="#windows-apache-setup">Εγκατάσταση του server</a></li>
+                                    <li><a href="#windows-apache-test">Δοκίμασε την εγκατάσταση</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#windows-php">PHP</a>
+                                <ol>
+                                    <li><a href="#windows-php-download">Κατέβασε τα απαραίτητα αρχεία</a></li>
+                                    <li><a href="#windows-php-extract">Αποσύμπιεσε τα αρχεία</a></li>
+                                    <li><a href="#windows-php-configurephp">Ρύθμισε την PHP</a></li>
+                                    <li><a href="#windows-php-configureapache">Ρύθμισε τον Apache</a></li>
+                                    <li><a href="#windows-php-restartapache">Επανεκκίνησε τον Apache</a></li>
+                                    <li><a href="#windows-php-test">Δοκίμασε την PHP</a></li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><a href="#ubuntu">Σε Ubuntu</a>
+                        <ol>
+                            <li><a href="#ubuntu-setup">Εγκατάσταση των πακέτων</a></li>
+                            <li><a href="#ubuntu-configureapache">Ρύθμισε τον Apache</a></li>
+                            <li><a href="#ubuntu-restartapache">Επανεκκίνησε τον Apache</a></li>
+                            <li><a href="#ubuntu-test">Δοκίμασε την εγκατάσταση</a></li>
+                        </ol>
+                    </li>
+                    <li><a href="#links">Σύνδεσμοι</a></li>
+                </ol>
+            </div>
+			<h2 id="windows">Σε Windows</h2>
+			<p>Οι παρακάτω οδηγίες έχουν δοκιμαστεί σε Windows 7 αλλά δεν υπάρχει λόγος να μη δουλεύουν και σε άλλες εκδόσεις. Κατά την εγκατάσταση προτείνεται να είναι απενεργοποιημένη η απόκρυψη γνωστών τύπων αρχείων (στις Επιλογές Φακέλων -&gt; Προβολή -&gt; Για Προχωρημένους, από τον πίνακα ελέγχου σε Windows 7, από το Μενού "Εργαλεία" σε XP). Επίσης αν χρησιμοποιείς το Skype, θα χρειαστεί να απενεργοποιήσεις την χρήση της θύρας 80 (Tools -&gt; Options -&gt; Advanced -&gt; Connection -&gt; Use port 80).</p>
+			<h3 id="windows-apache">Apache</h3>
+			<ol>
+				<li>
+					<h4 id="windows-apache-download">Κατέβασε το αρχείο εγκατάστασης</h4>
+					<p>Μπες στη σελίδα <a href="http://apache.cc.uoc.gr/httpd/binaries/win32">http://apache.cc.uoc.gr/httpd/binaries/win32</a> και βρες το αρχείο <em class="option">httpd-έκδοση-win32-x86-no_ssl.msi</em> με τη νεότερη έκδοση.<br />
+					Κατά τη συγγραφή αυτού του οδηγού το νεότερο ήταν το <a href="http://apache.cc.uoc.gr/httpd/binaries/win32/httpd-2.2.17-win32-x86-no_ssl.msi">httpd-2.2.17-win32-x86-no_ssl.msi</a>.</p>
+				</li>
+				<li>
+					<h4 id="windows-apache-setup">Εγκατάσταση του server</h4>
+					<p>Τρέξε το αρχείο εγκατάστασης και ακολούθησε τα παρακάτω βήματα:</p>
+					<ol class="romanlist">
+						<li>Πάτησε "Next".</li>
+						<li>Επίλεξε αποδοχή της άδεια χρήσης και πάτησε "Next".</li>
+						<li>Πάλι "Next".</li>
+						<li>Συμπλήρωσε τη φόρμα ως εξής:<br />
+						<img id="apache-options-img" src="apache-options.png" alt="Network Domain: localhost, Server Name: localhost, Email Address: webmaster@localhost" />
+						Για Administrator's Email Address δώσε τη διεύθυνση που θες να επικοινωνήσουν οι επισκέπτες σε περίπτωση προβλήματος, μπορεί να είναι και ψεύτικη.
+						<!--
+						<dl>
+							<dt>Network Domain</dt>
+							<dd>localhost</dd>
+							<dt>Server Name</dt>
+							<dd>localhost</dd>
+							<dt>Administrator's Email Address</dd>
+							<dd>.</dd>
+						</dl>
+						-->
+						</li>
+						<li>Επίλεξε τυπική εγκατάσταση και πήγαινε στο επόμενο βήμα.</li>
+						<li>Εάν δεν θέλεις τον προεπιλεγμένο, επίλεξε φάκελο εγκατάστασης και προχώρησε στο τελικό βήμα.<br />
+						Εάν αλλάξεις φάκελο, να θυμάσαι ποιον επέλεξες γιατί θα χρειαστεί παρακάτω.</li>
+						<li>Πάτησε "finish".</li>
+					</ol>
+					<p>Εάν είδες κάποια στιγμή προς το τέλος να ανοίγουν παράθυρα κονσόλας, μην ανησυχείς, δεν είναι bug, είναι feature.</p>
+                </li>
+				<li>
+					<h4 id="windows-apache-test">Δοκίμασε την εγκατάσταση</h4>
+					<p>Μπες στη σελίδα <a href="http://localhost/">http://localhost/</a> και δες τη σελίδα επιβεβαίωσης της εγκατάστασης ("It works!").</p>
+				</li>
+			</ol>
+			<p>Τώρα μπορείς να δημιουργήσεις δικά σου αρχεία (π.χ. test.html) στον υποφάκελο htdocs του φακέλου εγκατάστασης του Apache και να τα δεις στον browser σου (π.χ. στο <a href="http://localhost/test.html">http://localhost/test.html</a>). Τα αρχεία PHP όμως δεν θα εκτελούνται από τον server αλλά απλά θα τυπώνεται το περιεχόμενό τους, μέχρι να εγκατασταθεί η PHP. <br />
+			Ο προεπιλεγμένος φάκελος εγκατάστασης για την έκδοση 2.2 είναι Αρχεία Εφαρμογών (Program Files) -&gt; Apache Software Foundation -&gt; Apache 2.2.</p>
+			
+			<h3 id="windows-php">PHP</h3>
+			<ol>
+				<li>
+					<h4 id="windows-php-download">Κατέβασε τα απαραίτητα αρχεία</h4>
+					<p>Μπες στο <a href="http://windows.php.net/download">http://windows.php.net/download</a> και στο select box πάνω πάνω επίλεξε <em class="option">VC6 x86 Thread Safe</em> της νεότερης έκδοσης PHP (κατά τη συγγραφή ήταν PHP 5.3 (5.3.3)).<br />
+                    Παρ' όλο που στο σεμινάριο θα χρησιμοποιήσουμε μόνο λειτουργίες της PHP 5.2, όλες αυτές παρέχονται και από την PHP 5.3.<br />
+					Κατέβασε τα αρχεία σε Zip. Ο "Installer" δεν συμβαδίζει με τη συνέχεια του οδηγού, και επίσης παρουσιάζει σε πολλούς προβλήματα.</p>
+				</li>
+				<li>
+					<h4 id="windows-php-extract">Αποσυμπίεσε τα αρχεία</h4>
+					<p>Χρησιμοποίησε κάποια εφαρμογή όπως WinZip ή WinRAR και αποσυμπίεσε τα αρχεία στο φάκελο C:\php. Εάν δεν επιλέξεις αυτό το φάκελο για αποσυμπίεση, παρακάτω, όπου C:\php να αντικαθιστάς με τον φάκελο που επέλεξες.</p>
+				</li>
+				<li>
+					<h4 id="windows-php-configurephp">Ρύθμισε την PHP</h4>
+					<p>Μπες στο φάκελο C:\php και μετονόμασε το αρχείο php.ini-development σε php.ini (η κατάληξη .ini μπορεί να εξαφανιστεί). Άνοιξε το php.ini με κάποιο επεξεργαστή κειμένου (π.χ. Σημειωματάριο) και ψάξε για doc_root.</p>
+					<p>To <code>doc_root =</code>άλλαξέ το σε <code>doc_root = "C:\Program Files\Apache Software Foundation\Apache 2.2\Apache 2.2\htdocs"</code> ή ανάλογα με το φάκελο εγκατάστασης του Apache αν δεν είναι ο προεπιλεγμένος.</p>
+					<p>Επίσης, λίγο παρακάτω, το <code>extension_dir = "./"</code> άλλαξέ το σε <code>extension_dir = "C:\php\ext"</code></p>
+					<p>Αν η γραμμή στην οποία είναι το <code>extension_dir = "C:\php\ext"</code> ξεκινάει με ένα semicolon, αφαιρέστε το</p>
+					<p>Προτείνεται επίσης σε μαθητές, προαιρετικά, να αλλάξουν την τιμή του error_reporting σε E_ALL | E_NOTICE | E_STRICT. 
+                    <code>error_reporting = E_ALL | E_NOTICE | E_STRICT</code></p>
+				</li>
+				<li>
+					<h4 id="windows-php-configureapache">Ρύθμισε τον Apache</h4>
+					<p>Πήγαινε στο φάκελο εγκατατάστασης του Apache, και μπες στο φάκελο "conf".</p>
+					<p class="tip">Μπορεί να μη χρειαστεί να αλλάξεις τα δικαιώματα των χρηστών, αλλά συνήθως χρειάζεται. Κάνε δεξί κλικ στο αρχείο httpd.conf, πήγαινε στις ιδιότητες και στο tab "Ασφάλεια" πάτησε "Επεξεργασία", και δώσε Πλήρη Έλεγχο στους χρήστες.</p>
+					<p>Άνοιξε το αρχείο httpd.conf και πρόσθεσε στο τέλος:</p>
+					<code>LoadModule php5_module "C:/php/php5apache2_2.dll"<br />
+					AddType application/x-httpd-php .php<br />
+					PHPIniDir "C:/php"</code>
+					<p>Και τέλος, κάτω από τη γραμμή &lt;IfModule dir_module&gt; βάλε "index.php" αριστερά του "index.html" στο DirectoryIndex, δηλαδή να γίνει η γραμμή:</p>
+					<code>DirectoryIndex index.php index.html</code>
+				</li>
+				<li>
+					<h4 id="windows-php-restartapache">Επανεκκίνησε τον Apache</h4>
+					<p>Από το μενού "Έναρξη" στο Όλα τα προγράμματα -&gt; Apache HTTP Server 2.2 -&gt; Control Apache Server επίλεξε επανεκκίνηση ("Restart").</p>
+				</li>
+				<li>
+					<h4 id="windows-php-test">Δοκίμασε την PHP</h4>
+					<p>Στο htdocs φτιάξε ένα αρχείο test.php με περιεχόμενα:
+					<code>&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;phpinfo();<br />?&gt;</code>
+					και μπες στο <a href="http://localhost/test.php">http://localhost/test.php</a>. Αν η PHP εγκαταστάθηκε σωστά θα βλέπεις μια σελίδα με πληροφορίες για τις εκδόσεις PHP, Apache κ.α. που χρησιμοποιείς.</p>
+				</li>
+			</ol>
+			
+			<h2 id="ubuntu">Σε Ubuntu</h2>
+            <p>Σε Ubuntu η εγκατάσταση είναι σαφώς πιο απλή. Υποθέτουμε εδώ ότι χρησιμοποιείς έκδοση νεότερη της 8.0 και περιβάλλον GNOME (αν και οπουδήποτε μπορείς να χρησιμοποιήσεις την κονσόλα).</p>
+            <ol>
+                <li>
+                    <h3 id="ubuntu-setup">Εγκατάσταση πακέτων</h3>
+                    <p>Πρέπει να εγκαταστηθούν τα πακέτα: <em class="package">apache2</em>, <em class="package">php5</em> και <em class="package">libapache-mod-php5</em>.</p>
+                    <p>Αυτό μπορεί να γίνει είτε επιλέγοντας τα πακέτα από το Synaptic (μενού Σύστημα -&gt; Διαχείριση Συστήματος -&gt; Synaptic Package Manger και χρησιμοποίησε την Αναζήτηση) είτε από την κονσόλα (μενού Εφαρμογές -&gt; Βοηθήματα -&gt; Τερματικό) με την παρακάτω εντολή:
+                    <code>sudo apt-get install apache2 php5 libapache2-mod-php5</code></p>
+                    <p>Και στις δύο περιπτώσεις θα ζητηθεί να γράψεις τον κωδικό σου.</p>
+                </li>
+                <li>
+                    <h3 id="ubuntu-configure">Ρύθμισε των Apache</h3>
+                    <p>Τρέξε στο Τερματικό την εντολή:
+                    <code>echo "ServerName localhost" | sudo tee /etc/apache2/conf.d/fqdn</code>
+                    <p>Αυτή η εντολή αλλάζει τα περιεχόμενα του /etc/apache2/conf.d/fqdn σε "ServerName localhost", χρησιμοποιώντας δικαιώματα διαχειριστή που είναι απαραίτητα.</p>
+                </li>
+                <li>
+                    <h3 id="ubuntu-restartapache">Επανεκκίνησε τον Apache</h3>
+                    <p>Το βήμα αυτό πιθανώς δεν χρειάζεται, αλλά για σιγουριά καν' το κι εσύ. Άνοιξε το Τερματικό και τρέξε την εντολή:
+                    <code>sudo /etc/init.d/apache2 restart</code></p>
+                    <!-- <p>Ακόμη και αν εμφανιστεί "Could not determine the server's fully qualified domain name, using 127.0.0.1 for ServerName" o server θα πρέπει να λειτουργήσει κανονικά.</p> -->
+                </li>
+                <li>
+                    <h3 id="ubuntu-test">Δοκίμασε την εγκατάσταση</h3>
+					<p>Μπες στη σελίδα <a href="http://localhost/">http://localhost/</a> και δες τη σελίδα επιβεβαίωσης της εγκατάστασης ("It works!").</p>
+                </li>
+            </ol>
+            <p>Αν η εγκατάσταση ολοκληρώθηκε επιτυχώς, μπορείς να προσθέσεις τα δικά σου αρχεία στο /var/www/ και να τα βλέπεις μετά στο <a href="http://localhost/όνομα-αρχείου">http://localhost/όνομα-αρχείου</a>.</p>
+        
+            <h2 id="links">Σύνδεσμοι</h2>
+            <p>Οι παρακάτω σύνδεσμοι περιέχουν πιο αναλυτικές πληροφορίες για την εγκατάσταση ή βοηθούν στην αντιμετώπιση προβλημάτων, αλλά είναι γραμμένοι στα Αγγλικά.</p>
+            <ul>
+                <li>
+                    <a href="http://httpd.apache.org/docs/2.2/platform/windows.html">Using Apache HTTP Server on Microsoft Windows στο apache.org</a> - Οδηγίες εγκατάστασης και χρήσης του Apache σε Windows.
+                </li> 
+                <li>
+                    <a href="http://www.php.net/manual/en/install.windows.apache2.php">Apache 2.x on Microsoft Windows στο php.net</a> - Οδηγίες εγκατάστασης της PHP σε Windows χρησιμοποιώντας Apache.
+                </li>
+                <li>
+                    <a href="http://help.ubuntu.com/community/">ApacheMySQLPHP στο Ubuntu Documentation</a> - Πιο αναλυτικές οδηγίες για εγκατάσταση σε Ubuntu.
+                </li>
+                <li>
+                    <a href="http://ubuntuforums.org/search.php">Σελίδα αναζήτησης στα Ubuntu Forums</a> - Αν συναντήσεις πρόβλημα στα Ubuntu ψάξε εδώ, πολύ πιθανά κάποιος άλλος έχει το ίδιο πρόβλημα μ' εσένα.
+                </li>
+            </ul>
+        </div>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            var disqus_shortname = 'apachephp';
+            var disqus_identifier = 'setup';
+            var disqus_url = 'http://web-seminar.softlab.ntua.gr/resources/apachephp/setup.html';
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<title>jQuery Demo</title>
+		<style type="text/css">
+			span {
+				cursor: pointer;
+				border: 2px solid black;
+				padding: 3px;
+				display: block;
+				width: 200px;
+				text-align: center;
+			}
+		</style>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+	</head>
+	<body>
+		<span id="button">Εμφάνιση</span>
+		<p id="content" style="display: none">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut facilisis accumsan tellus nec commodo. Nullam velit libero, ornare quis tristique et, mattis id risus. Etiam nisl sem, iaculis a volutpat sit amet, accumsan et nunc. Nulla nisi ipsum, tempor id vehicula vel, euismod vel arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque fermentum placerat dolor rhoncus laoreet. Nam tempus lectus a libero porttitor ac semper mauris vulputate. Pellentesque hendrerit, augue eget sollicitudin imperdiet, nunc purus convallis neque, sit amet pulvinar nibh nulla vel dui. Morbi quis neque non magna faucibus molestie quis vitae est. Cras vel porttitor augue. Integer suscipit aliquet bibendum. Donec scelerisque malesuada suscipit. Vivamus fringilla tristique diam, id sodales enim tristique porta. Cras cursus, dolor nec egestas lobortis, dui erat faucibus leo, eget euismod metus nulla sed erat. Mauris vel lectus purus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam volutpat massa accumsan nisi euismod ut cursus nunc congue.</p>
+		
+		<script type="text/javascript">
+			$( '#button' ).click( function() {
+				if( $( '#button' ).hasClass( 'visible' ) ) {
+					$( '#button' ).removeClass( 'visible' );
+					$( '#button' ).text( 'Εμφάνιση' );
+				}
+				else {
+					$( '#button' ).addClass( 'visible' );
+					$( '#button' ).text( 'Εξαφάνιση' );
+				}
+				$( '#content' ).toggle( 'slow' );
+			} );
+		</script>
+	</body>
+</html>

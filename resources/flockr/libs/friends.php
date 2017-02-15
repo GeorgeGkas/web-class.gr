@@ -1,0 +1,1 @@
+<?php    function Friend_Create( $follower, $following ) {    }        function Friend_FollowingListing( $follower ) {    }        function Friend_FollowerListing( $following ) {    }        function Friend_Delete( $follower, $following ) {    }?>

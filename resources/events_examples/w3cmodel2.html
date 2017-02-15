@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>Events</title>
+		<style type="text/css">
+			span {
+				cursor: pointer;
+				border: 2px solid black;
+				padding: 3px;
+				display: block;
+				width: 200px;
+				text-align: center;
+				margin: 6px;
+			}
+		</style>
+		<script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+	</head>
+	<body>
+		<span id='button1'>W3C Method</span>
+	
+		<script type="text/javascript">
+			function doSomething() {
+				alert( 'doSomething called' );
+			}
+			function doSomething2() {
+				alert( 'doSomething2 called' );
+			}
+			
+			var a = document.getElementById( 'button1' );
+			a.addEventListener( 'click', doSomething, false );
+			a.addEventListener( 'click', doSomething2, false );
+		</script>
+	</body>
+</html>

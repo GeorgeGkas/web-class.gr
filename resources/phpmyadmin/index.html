@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="el" lang="el"> 
+	<head>
+        <!--
+            Εεεεπ! Πώς και διαβάζεις αυτό τον κώδικα; Καλή ανάγνωση! :)
+        -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Εγκατάσταση PhpMyAdmin</title>
+        <link type="text/css" rel="stylesheet" href="http://web-seminar.softlab.ntua.gr/resources/instruct.css" />
+		<style>
+			p.note {
+				font-size: 8pt;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Εγκατάσταση PhpMyAdmin</h1>
+        <div class="author">
+            <a href="http://twitter.com/#!/petrosagg">Πέτρος Αγγελάτος</a>, για το <a href="http://web-seminar.softlab.ntua.gr/">Σεμινάριο: Ανάπτυξη Web Εφαρμογών 2010</a>
+        </div>
+		<div class="contents">
+			<p>Οι παρακάτω οδηγίες έχουν δοκιμαστεί σε Windows 7. Για την εγκατάσταση MySQL, PHP και Apache υπάρχει ξεχωριστός <a href="http://web-seminar.softlab.ntua.gr/resources/mysql/index.html">οδηγός</a>.<p>
+			<p class="note">Αν έχεις PHP έκδοση παλιότερη της 5.3 θα χρειαστεί να την αναβαθμίσεις.</p>
+			<ol>
+				<li>
+					<h3>Κατέβασε το αρχείο εγκατάστασης</h3>
+					<p>Μπες στη σελίδα <a href="http://www.phpmyadmin.net/home_page/downloads.php">http://www.phpmyadmin.net/home_page/downloads.php</a> και κατέβασε την πιο πρόσφατη αγγλική έκδοση του phpMyAdmin.</p>
+					<p>Εγώ κατέβασα <a href="http://sourceforge.net/projects/phpmyadmin/files%2FphpMyAdmin%2F3.3.8.1%2FphpMyAdmin-3.3.8.1-english.zip/download#!md5!46c89f43ccd64189f64afddfaf3e453a">αυτό</a> το αρχείο.</p>
+				</li>
+				<li>
+					<h3>Εγκατάσταση</h3>
+					<p>Κάνε extract τα περιεχόμενα του αρχείπου κατέβασες στον φάκελο htdocs της εγκατάστασης του Apache:</p>
+					<p>Εγώ έκανα extract τον φάκελο με όνομα <em>phpMyAdmin-3.3.8.1-english</em> και τον μετονόμασα σε <em>pma</em></p>
+				</li>
+				<li>
+					<h3>Ρύθμιση</h3>
+					<p>Το phpMyAdmin θα πρέπει να δουλέψει χωρίς κάποια επιπλέον ρύθμιση</p>
+					<ol>
+						<li>Άνοιξε τον φυλλομετρητή σου</li>
+						<li>Πήγαινε στη σελίδα http://localhost/pma/</li>
+						<li>Θα πρέπει να εμφανιστεί το login screen του phpMyAdmin. Συμπλήρωσε root στο username και στο password το password που όρισες όταν εγκαθιστούσες την MySQL</li>
+						<li>Συνδέσου στην βάση δεδομένων</li>
+					</ol>
+				</li>
+                <li>
+                    <h3>Δημιουργία βάσης δεδομένων</h3>
+                    <p>Μία web εφαρμογή καλό είναι να συνδέεται στην MySQL όχι ως root αλλά ως κάποιος άλλος χρήστης που έχει δικαίωμα πρόσβασης μόνο στη βάση που αφορά την εφαρμογή:</p>
+					<p>Ακολούθησε τα παρακάτω βήματα όταν έχεις αποφασίσει για το όνομα και το σχήμα της βάσης δεδομένων σου</p>
+                    <ol>
+                        <li>Συνδέσου με το phpMyAdmin χρησιμοποιοώντας τον χρήστη root</li>
+						<li>Στο πλαίσιο κάτω από το <em>Create new database</em> συμπλήρωσε το όνομα που θες να έχει η βάση δεδομένων</li>
+						<li>Στο Collation δεξιά από το όνομα επέλεξε <em>utf8_unicode_ci</em></li>
+						<li>Πάτα το κουμπί <em>Create</em></li>
+						<li>Πάτα το κουμπί <em>Home</em> από την αριστερή στήλη</li>
+                        <li>Πήγαινε στην καρτέλα Priviledges</li>
+                        <li>Κάνε κλικ στο κουμπι <em>Add a new User</em></li>
+                        <li>Στο πεδίο username συμπλήρωσε το username της επιλογής σου.</li>
+                        <li>Στο πεδίο host επέλεξε <em>Local</em></li>
+						<li>Συμπλήρωσε το password που θες να έχει ο χρήστης που δημιουργείς</li>
+						<li>Πάτα το κουμπί <em>Go</em></li>
+						<li>Στο πλαίσιο <em>Database-specific privileges</em> στο πεδίο <em>Add privileges on the following database</em> επέλεξε την βάση δεδομένων που δημιούργησες</em></li>
+						<li>Θα μεταφερθείς στις ρυθμίσεις για τα δικαιώματα του χρήστη πάνω στη συγκεκριμένη βάση δεδομένων</li>
+						<li>Στο πλαίσιο <em>Database-specific privileges</em> κάνε κλικ στο <em>Check all</em></li>
+						<li>Πάτα το κουμπί <em>Go</em></li>
+						<li>Κάνε κλικ στο πράσινο εικονίδιο που γράφει Exit στην αριστερή στήλη για να κάνεις logout</li>
+						<li>Κάνε login με το όνομα χρήστη και password που δημιούργησες</li>
+                    </ol>
+                </li>
+			</ol>
+            <p>Πλέον είσαι σε στάδιο να δημιουργήσεις τους πίνακες της βάσης σου.</p>
+        </div>
+	</body>
+</html>

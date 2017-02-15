@@ -1,0 +1,9 @@
+posts
+ postid int(11)   No None AUTO_INCREMENT             
+ text text utf8_unicode_ci  No None           
+ userid int(11)   No None              
+ created datetime   No None              
+users
+ userid int(11)   No None AUTO_INCREMENT             
+ username varchar(20) utf8_unicode_ci  No None              
+ password varchar(20) utf8_unicode_ci  No None

@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="el" lang="el"> 
+	<head>
+        <!--
+            Εεεεπ! Πώς και διαβάζεις αυτό τον κώδικα; Καλή ανάγνωση! :)
+        -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Εγκατάσταση MySQL</title>
+        <link type="text/css" rel="stylesheet" href="http://web-seminar.softlab.ntua.gr/resources/instruct.css" />
+		<style>
+			p.note {
+				font-size: 8pt;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Εγκατάσταση MySQL</h1>
+        <div class="author">
+            <a href="http://twitter.com/#!/abresas">Αλέξης Μπρέζας</a>, για το <a href="http://web-seminar.softlab.ntua.gr/">Σεμινάριο: Ανάπτυξη Web Εφαρμογών 2010</a>
+        </div>
+		<div class="contents">
+			<!--
+			 <div class="navigation">
+                <h2>Περιεχομενα</h2> 
+                <ol>
+                    <li><a href="#windows">Σε Windows</a>
+                        <ol>
+                            <li><a href="#windows-apache">Apache</a>
+                                <ol>
+                                    <li><a href="#windows-apache-download">Κατέβασε το αρχείο εγκατάστασης</a></li>
+                                    <li><a href="#windows-apache-setup">Εγκατάσταση του server</a></li>
+                                    <li><a href="#windows-apache-test">Δοκίμασε την εγκατάσταση</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#windows-php">PHP</a>
+                                <ol>
+                                    <li><a href="#windows-php-download">Κατέβασε τα απαραίτητα αρχεία</a></li>
+                                    <li><a href="#windows-php-extract">Αποσύμπιεσε τα αρχεία</a></li>
+                                    <li><a href="#windows-php-configurephp">Ρύθμισε την PHP</a></li>
+                                    <li><a href="#windows-php-configureapache">Ρύθμισε τον Apache</a></li>
+                                    <li><a href="#windows-php-restartapache">Επανεκκίνησε τον Apache</a></li>
+                                    <li><a href="#windows-php-test">Δοκίμασε την PHP</a></li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><a href="#ubuntu">Σε Ubuntu</a>
+                        <ol>
+                            <li><a href="#ubuntu-setup">Εγκατάσταση των πακέτων</a></li>
+                            <li><a href="#ubuntu-configureapache">Ρύθμισε τον Apache</a></li>
+                            <li><a href="#ubuntu-restartapache">Επανεκκίνησε τον Apache</a></li>
+                            <li><a href="#ubuntu-test">Δοκίμασε την εγκατάσταση</a></li>
+                        </ol>
+                    </li>
+                    <li><a href="#links">Σύνδεσμοι</a></li>
+                </ol>
+            </div>
+			-->
+			<h2 id="windows">Σε Windows</h2>
+			<p>Οι παρακάτω οδηγίες έχουν δοκιμαστεί σε Windows 7. Για την εγκατάσταση PHP και Apache υπάρχει ξεχωριστός <a href="http://web-seminar.softlab.ntua.gr/resources/apachephp/setup.html">οδηγός</a>.<p>
+			<p class="note">Αν έχεις PHP έκδοση παλιότερη της 5.3 θα χρειαστεί να την αναβαθμίσεις.</p>
+			<ol>
+				<li>
+					<h3 id="windows-download">Κατέβασε το αρχείο εγκατάστασης</h3>
+					<p>Μπες στη σελίδα <a href="http://dev.mysql.com/downloads/mysql/">http://dev.mysql.com/downloads/mysql/</a> και πάτα Download sτο Windows MSI Installer Essentials. 
+					Θα μεταφερθείς σε φόρμα εισόδου ή εγγραφής στο mysql.com, αλλά μπορείς να το ξεπεράσεις πατώντας στο link "No thanks" από κάτω. Από εκεί πάτα στο HTTP download link του NTUA.</p>
+					<p>Εγώ κατέβασα <a href="http://dev.mysql.com/get/Downloads/MySQL-5.1/mysql-essential-5.1.53-win32.msi/from/http://ftp.ntua.gr/pub/databases/mysql/">αυτό</a> το αρχείο.</p>
+				</li>
+				<li>
+					<h3 id="windows-install">Εγκατάσταση</h3>
+					<p>Με το αρχείο εγκατάστασης η διαδικασία είναι η συνηθισένη:</p>
+					<ol>
+						<li>Πάτησε <em>Next</em></li>
+						<li>Επίλεξε <em>Typical</em></li>
+						<li>Πάτησε <em>Install</em></li>
+					</ol>
+					<p>Στο παράθυρο διαφήμισης του MySQL Enterprise προχώρησε παρακάτω και πάτησε <em>Finish</em> ώστε να ανοίξει το παράθυρο ρύθμισης (Configuration Wizard).</p>			
+				</li>
+				<li>
+					<h3 id="windows-configure">Ρύθμιση</h3>
+					<p>Η ρύθμιση είναι καλό να γίνει αναλυτικά, κυρίως για να έχουμε UTF-8 βάσεις δεδομένων εκ προεπιλογής. Ακολούθησε:</p>
+					<ol>
+						<li>Πάτησε <em>Next</em></li>
+						<li>Επίλεξε <em>Detailed Configuration</em> και πάτησε <em>Next</em>.</li>
+						<li>Επίλεξε <em>Developer Machine</em> και μετά <em>Multifunctional Database</em>.</li>
+						<li>Επίλεξε το δίσκο που θες να χρησιμοποιεί η MySQL. Αν δεν είσαι σίγουρος απλά πήγαινε παρακατω.</li>
+						<li>Επίλεξε <em>Decision Support</em> και πάτησε <em>Next</em>.</li>
+						<li>Πρόσεξε ότι έχεις τα "Enable TCP/IP Networking" και "Enable Strict Mode" ενεργοποιημένα και <em>Next</em>.</li>
+						<li>Εδώ αλλάζουμε την αρχική επιλογή σε "Best Support for Multilangualism".</li>
+						<li>Ενεργοποίησε τα "Install as Windows Service" και "Include Bin Directory in Windows PATH".</li>
+						<li>Φτιάξε ένα λογαριασμό διαχειριστή (root). To "Current Password" άφησέ το κενό. Προτείνεται να μην βάλεις πολύ εύκολο password.</li>
+						<li>Τέλος, ζήτα από το πρόγραμμα να εκτελέσει τις διαδικασίες και όταν τελειώσει πάτησε finish.</li>
+					</ol>
+				</li>
+                <li>
+                    <h3 id="windows-php">Σύνδεση με την PHP</h3>
+                    <p>Ο δαίμονας της MySQL έχει πλέον εγκατασταθεί και ρυθμιστεί σωστά. Θα πρέπει να
+                    ενεργοποιήσεις τώρα τις συναρτήσεις της PHP που επιτρέπουν την σύνδεση με την MySQL:</p>
+                    <ol>
+                        <li>Τρέξε το phpinfo() όπως περιγράφουμε στον προηγούμενο οδηγό για να βρεις την θέση του php.ini</li>
+                        <li>Επεξεργάσου το αρχείο php.ini. Ενδέχεται να χρειάζεται να αλλάξεις τις ιδιότητες του αρχείου ώστε να ενεργοποιήσεις την δυνατότητα εγγραφής.</li>
+                        <li>Βρες την γραμμή που γράφει "extension=php_mysql.dll" και βγάλε το ";" που υπάρχει στην αρχή.</li>
+                        <li>Βεβαιώσου ότι η ρύθμιση "magic_quotes_gpc" είναι ρυθμισμένη σε "Off".</li>
+                        <li>Βεβαιώσου ότι η ρύθμιση "register_globals" είναι ρυθμισμένη σε "Off".</li>
+                        <li>Κάνε επανεκκίνηση του Apache.</li>
+                    </ol>
+                </li>
+			</ol>
+            <p>Πλέον είσαι σε στάδιο να συνδεθείς στην MySQL μέσα από την PHP με τις συναρτήσεις που έχουμε δείξει.</p>
+			<h2 id="ubuntu">Σε Ubuntu</h2>
+            <p>Τρέξε την ακόλουθη εντολή και ακολούθησε τις οδηγίες:</p>
+            <code>sudo apt-get install mysql php5-mysql</code>
+        </div>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Test</title>
+        <style type="text/css">
+            img { 
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 500px;
+                height: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="http://farm1.static.flickr.com/44/107274692_c6c32bba58.jpg" />
+        <img src="http://farm1.static.flickr.com/197/503637906_812e2e28b2.jpg" />
+        <script type="text/javascript">
+            var imgs = document.getElementsByTagName( 'img' );
+            imgs[ 0 ].onclick = function() {
+                animate( imgs[ 0 ], imgs[ 1 ] );
+            };
+            imgs[ 1 ].onclick = function() {
+                animate( imgs[ 1 ], imgs[ 0 ] );
+            };
+            
+            var animate = function( from, to ) {
+                var position = 0;
+                function move(){ 
+                    if( position < 500 ){
+                        setTimeout( move, 17 );
+                    }
+                    position += 3;
+                    from.style.width = 500 - position + 'px';
+                    to.style.width = position + 'px';
+                    to.style.left = 500 - position + 'px';
+                }
+                setTimeout( move, 17 );
+            }
+            
+        </script>
+    </body>
+</html>
