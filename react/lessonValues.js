@@ -1,7 +1,7 @@
 const lessonValues = [{
   Id: 1,
   title: 'ΕΙΣΑΓΩΓΗ ΣΤΗΝ HTML',
-  description: 'Εισαγωγή στις βασικές έννοιες της HTMl.',
+  description: 'Εισαγωγή στις βασικές έννοιες της HTML.',
   syllabus: [
     'Βασική σύνταξη HTML',
     'Διαχωρισμός περιεχομένου/μορφοποίησης',
