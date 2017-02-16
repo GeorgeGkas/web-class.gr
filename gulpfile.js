@@ -28,6 +28,9 @@ const babelify = require('babelify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const watchify = require('watchify');
+const uglify = require('gulp-uglify');
+const streamify = require('gulp-streamify');
+const minify = require('gulp-minify-css');
 
 // copy bootstrap required fonts to public
 gulp.task('fonts', function CopyFonts() {
@@ -53,6 +56,7 @@ gulp.task('scss', ['fonts'], function CompileSass() {
       ],
       cascade: false
     }))
+    .pipe(minify())
     .pipe(gulp.dest(scss.out));
 });
 
@@ -72,10 +76,10 @@ function ReactBundler(watch = false) {
 
   const bundle = browserify({
     extensions: ['.jsx', '.js'],
-    debug: true,
+    debug: false,
     cache: {},
     packageCache: {},
-    fullPaths: true,
+    fullPaths: false,
     entries: './react/index.js'
   });
 
@@ -89,6 +93,7 @@ function ReactBundler(watch = false) {
       .bundle()
       .on("error", (err) => console.log("Error : " + err.message))
       .pipe(source('bundle.js'))
+      .pipe(streamify(uglify()))
       .pipe(gulp.dest('./public/react'));
   }
 
