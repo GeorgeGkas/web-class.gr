@@ -25,7 +25,7 @@ export default class Exercise3 extends React.Component {
             <p> <span class="glyphicon glyphicon-exclamation-sign"></span> Προσπαθήστε να φτιάξετε το γενικό layout με άδεια divs και ύστερα προσθέστε σε αυτά το περιεχόμενό σας. </p>
           </div>
           <div id="solution">
-            <p> <span class="glyphicon glyphicon-thumbs-up"></span> Ολοκληρώνοντας την εργασία σας μην δυστάσετε να ρίξετε μια ματιά στις παρακάτω πρότυπες λύσεις:</p>
+            <p> <span class="glyphicon glyphicon-thumbs-up"></span> Ολοκληρώνοντας την εργασία σας μην διστάσετε να ρίξετε μια ματιά στις παρακάτω πρότυπες λύσεις:</p>
             <ul>
               <li><a href="http://web-class.gr/resources/assignment3/rigas"> Ρήγας Παπαθανασόπουλος</a></li>
                

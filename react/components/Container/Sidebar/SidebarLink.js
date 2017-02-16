@@ -24,7 +24,7 @@ export default class SidebarLink extends React.Component {
 
     return (
       <li class="ripple-btn">
-        <ReactLink to={this.props.url} onClick={() => this.handlePageChange()} >
+        <ReactLink to={this.props.url} onClick={() => this.handlePageChange()} activeClassName="nav-active" >
           <span class="item-align-fix">
             <i class={glyphoconType}></i>
               <span>{this.props.title}</span>

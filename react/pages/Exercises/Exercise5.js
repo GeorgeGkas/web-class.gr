@@ -32,9 +32,9 @@ export default class Exercise5 extends React.Component {
             <p> <span class="glyphicon glyphicon-exclamation-sign"></span> Μία λύση για τον χωρισμό των PHP αρχείων είναι να έχετε 2 PHP αρχεία: Το πρώτο που θα τυπώνει την λίστα με τα υπάρχοντα αρχεία και μία φόρμα, και το δεύτερο το οποίο θα είναι το action της φόρμας για το ανέβασμα του αρχείου και το οποίο απλώς θα αποθηκεύει το αρχείο και θα επιστρέφει τον χρήστη στην προηγούμενη σελίδα.  </p>
           </div>
           <div id="solution">
-            <p> <span class="glyphicon glyphicon-thumbs-up"></span> Ολοκληρώνοντας την εργασία σας μην δυστάσετε να ρίξετε μια ματιά στις παρακάτω πρότυπες λύσεις:</p>
+            <p> <span class="glyphicon glyphicon-thumbs-up"></span> Ολοκληρώνοντας την εργασία σας μην διστάσετε να ρίξετε μια ματιά στις παρακάτω πρότυπες λύσεις:</p>
             <ul>
-              <li><a href="#"> Δες την 6η εργασία</a></li>
+              <li><a href="/exercise-6"> Δες την 6η εργασία</a></li>
             </ul>
           </div>
         </section>

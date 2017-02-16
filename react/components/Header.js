@@ -13,7 +13,7 @@ export default class Header extends React.Component {
             <a id="jumbotron" onClick={() => sidebarStore.revertCurrentState()}></a>
           </li>
           <li>
-            <h1 id="app-bar__website-title">Web-Class.gr</h1></li>
+            <h1 id="app-bar__website-title">web-class.gr</h1></li>
         </ul>
         <ul class="navbar-right hidden-xs col-sm-8 col-md-9 col-lg-9" id="right-region">
           <Title/>

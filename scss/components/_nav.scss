@@ -21,6 +21,7 @@ nav > ul > li {
     transition: .2s;
     &:hover {
         background-color: #e3e3e3;
+        color: #333;
     }
 }
 
@@ -56,6 +57,10 @@ nav > ul > li > a > span {
     }
 }
 
+.nav-active {
+    color: #fff !important;
+    background-color: #717171 !important;
+}
 
 /* 
  *  The bellow classes is used to show what lessons and

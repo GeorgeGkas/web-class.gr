@@ -96,7 +96,7 @@ export default class Lesson extends React.Component {
         <header>
           <h1 id="lesson-title">{this.state.LessonDetails.title}</h1></header>
         <div id="lesson-description">
-          <p>{this.state.LessonDetails.description}</p>
+          <p dangerouslySetInnerHTML={{__html: this.state.LessonDetails.description}}></p>
           {this.syllabus_section}
           <div id="other-informations">
             <p id="presentaion-sheets">
