@@ -1,6 +1,11 @@
 import React  from 'react';
+import LessonStore from '../../LessonStore';
 
 export default class Exercise6 extends React.Component {
+  componentWillMount() {
+    LessonStore.setLesson("exercise-6");
+  }
+
   render() {
     return (
       <section id="exercise-description">

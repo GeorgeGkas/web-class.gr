@@ -19,7 +19,7 @@ export default class Index extends React.Component {
 	    <li>Subversion </li>
 	  </ul>
 	  <div id="go-to-first-lesson">
-	   	<button onClick={() => { browserHistory.push('/html-novice'); }} id="first-lesson-button">Ξεκίνα το 1ο μάθημα τώρα!</button>
+	   	<button onClick={() => { browserHistory.push('/html-beginner'); }} id="first-lesson-button">Ξεκίνα το 1ο μάθημα τώρα!</button>
 	  </div>
 	  <div id="footer">
 	   	<p>Όλο το υλικό του μαθήματος υπόκειται στην άδεια χρήσης <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons 4.0</a>.</p>
