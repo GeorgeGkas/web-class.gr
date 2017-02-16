@@ -10,7 +10,7 @@ const lessonValues = [{
     'Λίστες, σύνδεσμοι, εικόνες',
     'Πίνακες'
   ],
-  url: 'html-novice',
+  url: 'html-beginner',
   isExercise: false,
   videoURL: 'lyyoqlneOIQ',
   presentationSheetURL: 'http://web-class.gr/slides/01_htmlbeginner.pdf',
@@ -33,7 +33,7 @@ const lessonValues = [{
     'Box model, περιθώρια και πλαίσια'
 
   ],
-  url: 'css-novice',
+  url: 'css-beginner',
   isExercise: false,
   videoURL: 'pJL2oqSWyuk',
   presentationSheetURL: 'http://web-class.gr/slides/02_cssbeginner.pdf',
@@ -114,10 +114,10 @@ const lessonValues = [{
     'Πιο προχωρημένη HTML',
     'Πολλά πρακτικά παραδείγματα'
   ],
-  url: 'html-advance',
+  url: 'html-advanced',
   isExercise: false,
   videoURL: 'gzvjLfpor74',
-  presentationSheetURL: 'http://web-seminar.softlab.ntua.gr/slides/05_htmladvanced.pdf',
+  presentationSheetURL: 'http://web-class.gr/slides/05_htmladvanced.pdf',
   suggestedReading: [{
     Id: 1,
     title: 'HTML Advanced Tutorial',
@@ -139,7 +139,7 @@ const lessonValues = [{
     'Προχωρημένο box model',
     'Πρακτικά παραδείγματα'
   ],
-  url: 'css-advance',
+  url: 'css-advanced',
   isExercise: false,
   videoURL: 'LbdkFPgUics',
   presentationSheetURL: 'http://web-class.gr/slides/06_cssadvanced.pdf',
@@ -151,7 +151,7 @@ const lessonValues = [{
   deepening: [{
     Id: 1,
     title: 'CSS: The Definitive Guide',
-    url: 'www.amazon.com/CSS-Definitive-Guide-Eric-Meyer/dp/0596527330'
+    url: 'https://www.amazon.com/CSS-Definitive-Guide-Eric-Meyer/dp/0596527330'
   }]
 
 }, {
@@ -197,7 +197,7 @@ const lessonValues = [{
     'Τελεστές',
     'Συναρτήσεις'
   ],
-  url: 'php-novice',
+  url: 'php-beginner',
   isExercise: false,
   videoURL: 'UkXKSbxwmAQ',
   presentationSheetURL: 'http://web-class.gr/slides/08_phpbeginner.pdf',
@@ -265,7 +265,7 @@ const lessonValues = [{
     'Φίλτρα WHERE, λογικοί τελεστές, IN και BETWEEN',
     'Εισαγωγή, διαγραφή και ενημέρωση εγγραφών'
   ],
-  url: 'mysql-novice',
+  url: 'mysql-beginner',
   isExercise: false,
   videoURL: '1qPMeRK73jU',
   presentationSheetURL: 'http://web-class.gr/slides/10_mysqlbeginner.pdf',
@@ -344,7 +344,7 @@ const lessonValues = [{
     'Controllers',
     'Το μοντέλο MVC'
   ],
-  url: 'app-structure',
+  url: 'structure',
   isExercise: false,
   videoURL: 'dgQHfKYTDkk',
   presentationSheetURL: 'http://web-class.gr/slides/13_structure.pdf',
@@ -368,7 +368,7 @@ const lessonValues = [{
     'Λεξικά',
     'Συναρτήσεις'
   ],
-  url: 'js-novice',
+  url: 'js-beginner',
   isExercise: false,
   videoURL: '7vGEzHO6cMY',
   presentationSheetURL: 'http://web-class.gr/slides/14_javascriptbeginner.pdf',
@@ -508,7 +508,7 @@ const lessonValues = [{
     'Blame',
     'SVN server'
   ],
-  url: 'subversion',
+  url: 'svn',
   isExercise: false,
   videoURL: '-HSM8t2Ue30',
   presentationSheetURL: 'http://web-class.gr/slides/21_svn.pdf',
@@ -535,7 +535,7 @@ const lessonValues = [{
 Καθώς η τελευταία αυτή συνάντηση αποτελεί απολογισμό της δουλειάς μας, μέσα από τις παρουσιάσεις των συναδέλφων μας κρίθηκε από το κοινό αν τελικά ο στόχος μας να μεταδώσουμε την τεχνογνωσία ανάπτυξης λογισμικού που αφορά το web στην πράξη, συνδυάζοντας την επιστημονική γνώση και την πρακτική εφαρμογή της με τρόπο ο οποίος έχει άμεσα χρήσιμα αποτελέσματα καθώς και να αναδείξουμε την ομορφιά και τη δημιουργικότητα της διαδικασίας ανάπτυξης λογισμικού τελικά επετεύχθη. \
 Η συγκεκριμένη συνάντηση ήταν ανοιχτή σε όλους, ανεξαρτήτως αν είχαν παρακολουθήσει το σεμινάριο ή όχι.',
   syllabus: [],
-  url: 'final-presentations',
+  url: 'final',
   isExercise: false,
   suggestedReading: [],
   videoURL: '14E1Fr-Hvso',
