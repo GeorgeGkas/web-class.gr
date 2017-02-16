@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import { browserHistory } from 'react-router'
+import { browserHistory } from 'react-router';
 
 export default class Index extends React.Component {
   render() {
@@ -16,7 +16,7 @@ export default class Index extends React.Component {
 	    <li>PHP</li>
 	    <li>MYSQL</li>
 	    <li>Javascript</li>
-	    <li>Subversion </li>
+	    <li>Subversion</li>
 	  </ul>
 	  <div id="go-to-first-lesson">
 	   	<button onClick={() => { browserHistory.push('/html-beginner'); }} id="first-lesson-button">Ξεκίνα το 1ο μάθημα τώρα!</button>

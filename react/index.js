@@ -11,6 +11,7 @@ import Exercise3 from './pages/Exercises/Exercise3';
 import Exercise4 from './pages/Exercises/Exercise4';
 import Exercise5 from './pages/Exercises/Exercise5';
 import Exercise6 from './pages/Exercises/Exercise6';
+import Exercise7 from './pages/Exercises/Exercise7';
 
 import Index from './pages/Index';
 import Lesson from './pages/Lesson';
@@ -26,6 +27,7 @@ ReactDom.render(
       <Route path="exercise-4" name="exercise-4" component={Exercise4} ></Route>
       <Route path="exercise-5" name="exercise-5" component={Exercise5} ></Route>
       <Route path="exercise-6" name="exercise-6" component={Exercise6} ></Route>
+      <Route path="exercise-7" name="exercise-7" component={Exercise7} ></Route>
       <Route path=":lessonName" name="lesson" component={Lesson} ></Route>
     </Route>
   </Router>
