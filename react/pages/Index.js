@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import { browserHistory } from 'react-router';
+import { Link as ReactLink } from 'react-router';
 import LessonStore from '../LessonStore';
 
 export default class Index extends React.Component {
@@ -21,7 +21,12 @@ export default class Index extends React.Component {
   componentWillUnmount() {
     LessonStore.removeListener('change', this.getLesson);
   }
-  
+
+  handlePageChange() {
+    // go to first lesson.
+    LessonStore.setLesson("html-beginner");
+  }
+
   render() {
     return (
       <div>
@@ -35,7 +40,7 @@ export default class Index extends React.Component {
 	    <li>Subversion</li>
 	  </ul>
 	  <div id="go-to-first-lesson">
-	   	<button onClick={() => { browserHistory.push('/html-beginner'); }} id="first-lesson-button">Ξεκίνα το 1ο μάθημα τώρα!</button>
+	   	<ReactLink to="html-beginner" onClick={() => this.handlePageChange()} id="first-lesson-button">Ξεκίνα το 1ο μάθημα τώρα!</ReactLink>
 	  </div>
 	  <div id="footer">
 	   	<p>Όλο το υλικό του μαθήματος υπόκειται στην άδεια χρήσης <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons 4.0</a>.</p>
