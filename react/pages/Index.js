@@ -4,8 +4,24 @@
 
 import React from 'react';
 import { browserHistory } from 'react-router';
+import LessonStore from '../LessonStore';
 
 export default class Index extends React.Component {
+  getLesson() {
+    this.setState({
+      LessonDetails: LessonStore.getLesson()
+    });
+  }
+
+  componentWillMount() {
+    LessonStore.on('change', this.getLesson);
+    this.getLesson();
+  }
+
+  componentWillUnmount() {
+    LessonStore.removeListener('change', this.getLesson);
+  }
+  
   render() {
     return (
       <div>
