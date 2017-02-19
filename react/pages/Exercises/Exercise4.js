@@ -13,7 +13,7 @@ export default class Exercise4 extends React.Component {
             <p> <span class="glyphicon glyphicon-star"></span> Αυτή η εργασία αφορά μία πρακτική χρήση της PHP. Ο σκοπός της είναι να δείτε πώς η PHP χρησιμεύει για να δημιουργούμε σελίδες που είναι δυναμικές και έχουν περισσότερες δυνατότητες από μία στατική σελίδα.  </p>
           </div>
           <div id="curriculum">
-            <p> <span class="glyphicon glyphicon-education"></span> Ύλη: Διαλέξεις μέχρι και την 9η   </p>
+            <p> <span class="glyphicon glyphicon-education"></span> Ύλη: Ότι διδάχθηκε μέχρι αυτή την εργασία. </p>
           </div>
           <div id="problem">
             <h3>Εκφώνηση</h3>

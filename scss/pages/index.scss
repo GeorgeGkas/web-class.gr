@@ -41,7 +41,6 @@
     letter-spacing: 0;
     a {
         border-bottom: 1px dashed black;
-        margin-right: 15px;
     }
 }
 
@@ -113,6 +112,9 @@ section#lesson-details {
     margin-top: 30px;
     .glyphicon::before {
         padding-right: 10px;
+    }
+    a {
+        margin-right: 15px;
     }
 }
 

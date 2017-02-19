@@ -30,8 +30,8 @@ export default class Index extends React.Component {
   render() {
     return (
       <div>
-	  <p>Μάθε σήμερα ΔΩΡΕΑΝ ανάπτυξη web εφαρμογών μέσω βιντεοδιαλέξεων...</p>
-	  <ul>
+	  <p class="text-center">Μάθε σήμερα ΔΩΡΕΑΝ ανάπτυξη web εφαρμογών μέσω βιντεοδιαλέξεων.</p>
+	  <ul id="lessons-list">
 	    <li>HTML</li>
 	    <li>CSS</li>
 	    <li>PHP</li>
@@ -40,7 +40,7 @@ export default class Index extends React.Component {
 	    <li>Subversion</li>
 	  </ul>
 	  <div id="go-to-first-lesson">
-	   	<ReactLink to="html-beginner" onClick={() => this.handlePageChange()} id="first-lesson-button">Ξεκίνα το 1ο μάθημα τώρα!</ReactLink>
+	   	<ReactLink to="html-beginner" onClick={() => this.handlePageChange()} id="first-lesson-button">Ξεκίνα τώρα!</ReactLink>
 	  </div>
 	  <div id="footer">
 	   	<p>Όλο το υλικό του μαθήματος υπόκειται στην άδεια χρήσης <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons 4.0</a>.</p>

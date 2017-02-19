@@ -10,10 +10,10 @@ export default class Exercise2 extends React.Component {
     return (
       <section id="exercise-description">
           <div id="introduction">
-            <p> <span class="glyphicon glyphicon-star"></span> Αυτή είναι μία κλασική εργασία που ανατίθεται σε όσους μαθαίνουν HTML και CSS. Ονομάζεται half cleanroom επειδή δίνεται μόνο ο μισός κώδικας, ενώ ο υπόλοιπος μισός πρέπει να γραφτεί από εσάς. </p>
+            <p> <span class="glyphicon glyphicon-star"></span> Αυτή είναι μία κλασική εργασία που ανατίθεται σε όσους μαθαίνουν HTML και CSS. Ονομάζεται half <a href="https://en.wikipedia.org/wiki/Clean_room_design">cleanroom</a> επειδή δίνεται μόνο ο μισός κώδικας, ενώ ο υπόλοιπος μισός πρέπει να γραφτεί από εσάς. </p>
           </div>
           <div id="curriculum">
-            <p> <span class="glyphicon glyphicon-education"></span> Ύλη: Διαλέξεις μέχρι και την 4η  </p>
+            <p> <span class="glyphicon glyphicon-education"></span> Ύλη: Ότι διδάχθηκε μέχρι αυτή την εργασία.</p>
           </div>
           <div id="problem">
             <h3>Εκφώνηση</h3>

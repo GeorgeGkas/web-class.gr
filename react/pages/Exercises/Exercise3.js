@@ -13,7 +13,7 @@ export default class Exercise3 extends React.Component {
             <p> <span class="glyphicon glyphicon-star"></span> Μετά το half cleanroom της δεύτερης εργασίας αυτή τη φορά έχετε να κάνετε ένα πλήρες cleanroom.</p>
           </div>
           <div id="curriculum">
-            <p> <span class="glyphicon glyphicon-education"></span> Ύλη: Διαλέξεις μέχρι και την 6η  </p>
+            <p> <span class="glyphicon glyphicon-education"></span> Ύλη: Ότι διδάχθηκε μέχρι αυτή την εργασία.  </p>
           </div>
           <div id="problem">
             <h3>Εκφώνηση</h3>

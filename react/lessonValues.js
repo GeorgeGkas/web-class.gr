@@ -239,7 +239,7 @@ const lessonValues = [{
 }, {
   Id: 14,
   title: 'PHP GD',
-  description: 'Πρόκειται για ένα διασκεδαστικό και χρήσιμο θέμα που αναδεικνύει τις πολλές δυνατότητες της PHP, αλλά δεν απαιτείται για την παρακολούθηση των επόμενων, ούτε για την επίλυση ασκήσεων.',
+  description: 'Πρόκειται για ένα διασκεδαστικό και χρήσιμο θέμα που αναδεικνύει τις πολλές δυνατότητες της PHP, αλλά δεν απαιτείται για την παρακολούθηση των επόμενων, ούτε για την επίλυση ασκήσεων. Σας παραθέτουμε και την <a href="http://web-class.gr/resources/plot/">γραφική παράσταση</a> που παρουσιάστηκε στην διάλεξη καθώς και το <a href="http://web-class.gr/resources/fractal/">fractal</a>.',
   syllabus: [
     'Επεξεργασία εικόνας με την βιβλιοθήκη GD',
     'Κατασκευή προγράμματος γραφικών παραστάσεων'
@@ -316,7 +316,7 @@ const lessonValues = [{
 }, {
   Id: 18,
   title: 'ΠΡΟΧΩΡΗΜΕΝΗ PHP',
-  description: 'Προχωρημένα θέματα της PHP.',
+  description: 'Προχωρημένα θέματα της PHP. Μην ξεχάσετε <a href="http://web-class.gr/resources/sayit/">να δείτε το παράδειγμα</a> που δημιουργήσαμε μέσα στην τάξη, καθώς και να λύσεις τον <a href="http://web-class.gr/resources/sql-quiz/">SQL γρίφο</a>.',
   syllabus: [
     'Πιο προχωρημένη MySQL',
     'Αυτοενώσεις',
@@ -336,7 +336,7 @@ const lessonValues = [{
 }, {
   Id: 19,
   title: 'ΘΕΜΑΤΑ ΔΟΜΗΣ',
-  description: 'Η διάλεξη αφορά την σωστή συγγραφή κώδικα.',
+  description: 'Η διάλεξη αφορά την σωστή συγγραφή κώδικα. <a href="http://web-class.gr/resources/sayit/indexmvc.php">Δείτε και την εφαρμογή που δημιουργήσαμε στο προηγούμενο μάθημα</a>, δομημένο σε με βάση το μοντέλο <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC</a>.',
   syllabus: [
     'Δόμηση με συναρτήσεις',
     'Front-end και templates/views',
@@ -403,7 +403,7 @@ const lessonValues = [{
 }, {
   Id: 23,
   title: 'JAVASCRIPT EVENTS',
-  description: 'Σχετικά με JavaScript Events',
+  description: 'Σχετικά με JavaScript Events. Παραθέτουμε ακόμη και κάποια <a href="http://web-class.gr/resources/events_examples">παραδείγματα</a> χρήσης των js events.',
   syllabus: [],
   url: 'js-events',
   isExercise: false,
@@ -426,7 +426,7 @@ const lessonValues = [{
 }, {
   Id: 24,
   title: 'MOBILE',
-  description: 'Η διάλεξη έγινε από τον προσκεκλημένο διδάσκοντα Ανδρέα Νομικό, Stanford MSc από την ομάδα του LinkedIn. Πρόκειται για ένα διασκεδαστικό και χρήσιμο θέμα, αλλά δεν απαιτείται για την παρακολούθηση των επόμενων, ούτε για την επίλυση ασκήσεων.',
+  description: 'Η διάλεξη έγινε από τον προσκεκλημένο διδάσκοντα Ανδρέα Νομικό, Stanford MSc από την ομάδα του LinkedIn. Πρόκειται για ένα διασκεδαστικό και χρήσιμο θέμα, αλλά δεν απαιτείται για την παρακολούθηση των επόμενων, ούτε για την επίλυση ασκήσεων. Σας δίνουμε την δυνατότητα να <a href="http://web-class.gr/resources/mobile.zip">κατεβάσετε</a> κάποια παραδείγματα.',
   syllabus: [],
   url: 'mobile',
   isExercise: false,
@@ -437,7 +437,7 @@ const lessonValues = [{
 }, {
   Id: 25,
   title: 'DOM/BOM ΣΕ JAVASCRIPT',
-  description: 'Το μοντέλο DOM στην JavaScript',
+  description: 'Το μοντέλο DOM στην JavaScript.',
   syllabus: [],
   url: 'js-dom',
   isExercise: false,
@@ -452,7 +452,7 @@ const lessonValues = [{
 }, {
   Id: 26,
   title: 'ΘΕΜΜΑΤΑ ΑΣΦΑΛΕΙΑΣ',
-  description: 'Οι πρακτικές που παρουσιάστηκαν σε αυτή τη διάλεξη είναι πλέον ξεπερασμένες και θεωρούνται λάθος. Το md5 πρέπει να αποφεύγεται και στη θέση του να χρησιμοποιείται sha256 με αλάτι. Για εμβάθυνση σε θέματα ασφαλείας, σας παραπέμπουμε στο μάθημά μας <a href="http://security-class.gr" style="margin-right: 0;">security-class.gr</a>.',
+  description: 'Οι πρακτικές που παρουσιάστηκαν σε αυτή τη διάλεξη είναι πλέον ξεπερασμένες και θεωρούνται λάθος. Το md5 πρέπει να αποφεύγεται και στη θέση του να χρησιμοποιείται <a href="https://crackstation.net/hashing-security.htm">sha256 με αλάτι</a>. Για εμβάθυνση σε θέματα ασφαλείας, σας παραπέμπουμε στο μάθημά μας <a href="http://security-class.gr">security-class.gr</a>. Παραθέτουμε επίσης κάποια <a href="http://web-class.gr/resources/security">ενδιαφέροντα παραδείγματα</a> σχετικά με θέματα ασφάλειας.',
   syllabus: [
     'XSS',
     'Αναπαράσταση εντολών και δεδομένων',
@@ -475,7 +475,7 @@ const lessonValues = [{
 }, {
   Id: 27,
   title: 'OOP JAVASCRIPT',
-  description: 'Αντικειμενοστραφείς JavaScript',
+  description: 'Αντικειμενοστρεφής JavaScript και συναρτησιακός προγραμματισμός. <a href="http://web-class.gr/resources/animations/animation.html">Δείτε και το παράδειγμα</a> που παρουσιάστηκε στην διάλεξη.',
   syllabus: [],
   url: 'js-oop',
   isExercise: false,
@@ -494,7 +494,7 @@ const lessonValues = [{
 }, {
   Id: 28,
   title: 'SUBVERSION',
-  description: 'Αποθήκευση αρχείου κώδικα με χρήση της τεχνολογίας subversion. Ωστόσο, το subversion θεωρείται πλέον ξεπερασμένο και στη θέση του χρησιμοποιείται το git. Μπορείτε να παρακάμψετε αυτή τη διάλεξη και αντ\' αυτού να μελετήσετε το git. Σας παραπέμπουμε στο μάθημά μας <a href="http://git-class.gr" style="margin-right: 0;">git-class.gr</a>.',
+  description: 'Αποθήκευση αρχείου κώδικα με χρήση της τεχνολογίας subversion. Ωστόσο, το subversion θεωρείται πλέον ξεπερασμένο και στη θέση του χρησιμοποιείται το git. Μπορείτε να παρακάμψετε αυτή τη διάλεξη και αντ\' αυτού να μελετήσετε το git. Σας παραπέμπουμε στο μάθημά μας <a href="http://git-class.gr">git-class.gr</a>.',
   syllabus: [
     'Η ανάγκη για version control',
     'Εκδόσεις κώδικα',

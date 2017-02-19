@@ -13,7 +13,7 @@ export default class Exercise1 extends React.Component {
             <p> <span class="glyphicon glyphicon-star"></span> Πλέον είστε σε θέση να δημιουργήσετε την δικιά σας σελίδα!</p>
           </div>
           <div id="curriculum">
-            <p> <span class="glyphicon glyphicon-education"></span> Ύλη: Διαλέξεις 1 και 2 </p>
+            <p> <span class="glyphicon glyphicon-education"></span> Ύλη: Οι δύο πρώτες διαλέξεις. </p>
           </div>
           <div id="problem">
             <h3>Εκφώνηση</h3>

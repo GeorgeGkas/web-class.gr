@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import LessonStore from '../../LessonStore';
 
 export default class Exercise5 extends React.Component {
@@ -13,7 +13,7 @@ export default class Exercise5 extends React.Component {
             <p> <span class="glyphicon glyphicon-star"></span> Αυτή η εργασία αφορά βελτίωση της 4ης εργασίας. Σε περίπτωση που δεν έχετε ολοκληρώσει την 4η εργασία, σας προτείνουμε να τελειώσετε πρώτα τις απαιτήσεις της 4ης εργασίας πριν προχωρήσετε.  </p>
           </div>
           <div id="curriculum">
-            <p> <span class="glyphicon glyphicon-education"></span> Ύλη: Διαλέξεις μέχρι και την 12η </p>
+            <p> <span class="glyphicon glyphicon-education"></span> Ύλη: Ότι διδάχθηκε μέχρι αυτή την εργασία. </p>
           </div>
           <div id="problem">
             <h3>Εκφώνηση</h3>

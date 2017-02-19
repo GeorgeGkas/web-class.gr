@@ -13,7 +13,7 @@ export default class Exercise6 extends React.Component {
             <p> <span class="glyphicon glyphicon-star"></span> Αυτή η εργασία αφορά βελτίωση της 5ης εργασίας. Σε περίπτωση που δεν έχετε ολοκληρώσει την 5η εργασία, σας προτείνουμε να τελειώσετε πρώτα τις απαιτήσεις της 5ης εργασίας πριν προχωρήσετε.  </p>
           </div>
           <div id="curriculum">
-            <p> <span class="glyphicon glyphicon-education"></span> Ύλη: Διαλέξεις μέχρι και την 16η </p>
+            <p> <span class="glyphicon glyphicon-education"></span> Ύλη: Ότι διδάχθηκε μέχρι αυτή την εργασία. </p>
           </div>
           <div id="problem">
             <h3>Εκφώνηση</h3>
