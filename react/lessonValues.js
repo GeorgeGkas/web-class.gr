@@ -451,7 +451,7 @@ const lessonValues = [{
   deepening: []
 }, {
   Id: 26,
-  title: 'ΘΕΜΜΑΤΑ ΑΣΦΑΛΕΙΑΣ',
+  title: 'ΘΕΜΑΤΑ ΑΣΦΑΛΕΙΑΣ',
   description: 'Οι πρακτικές που παρουσιάστηκαν σε αυτή τη διάλεξη είναι πλέον ξεπερασμένες και θεωρούνται λάθος. Το md5 πρέπει να αποφεύγεται και στη θέση του να χρησιμοποιείται <a href="https://crackstation.net/hashing-security.htm">sha256 με αλάτι</a>. Για εμβάθυνση σε θέματα ασφαλείας, σας παραπέμπουμε στο μάθημά μας <a href="http://security-class.gr">security-class.gr</a>. Παραθέτουμε επίσης κάποια <a href="http://web-class.gr/resources/security">ενδιαφέροντα παραδείγματα</a> σχετικά με θέματα ασφάλειας.',
   syllabus: [
     'XSS',
